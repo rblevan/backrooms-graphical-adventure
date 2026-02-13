@@ -27,7 +27,7 @@ import java.util.Map;
  * It acts as the controller between the User Interface and the Model (Hero, Locations, Items).
  */
 public class Commands {
-    private final String commandList = String.join(" ", CommandWords.getValidCommands());
+    private final String commandList = String.join(" ", CommandsWords.getValidCommands());
 
     private Hero player;
     private Locations currentLocation;
@@ -61,7 +61,7 @@ public class Commands {
         String commandWord = parts[0];
         String[] args = parts.length > 1 ? parts[1].split("\\s+") : new String[0];
 
-        if (!CommandWords.isCommand(commandWord)) {
+        if (!CommandsWords.isCommand(commandWord)) {
             return "Unknown command. Type HELP for a list of commands.";
         }
 
