@@ -1,7 +1,8 @@
 package fr.univpoitiers.backrooms.classesTest;
 
-import fr.univpoitiers.backrooms.classes.Exits;
-import fr.univpoitiers.backrooms.classes.Locations;
+
+import fr.univpoitiers.backrooms.model.world.Exits;
+import fr.univpoitiers.backrooms.model.world.Locations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

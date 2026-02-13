@@ -1,6 +1,7 @@
 package fr.univpoitiers.backrooms.classesTest;
 
-import fr.univpoitiers.backrooms.classes.Entity;
+
+import fr.univpoitiers.backrooms.model.entity.Entity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

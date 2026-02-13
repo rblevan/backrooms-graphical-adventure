@@ -1,9 +1,10 @@
 package fr.univpoitiers.backrooms.classesTest;
 
-import fr.univpoitiers.backrooms.classes.Entity;
-import fr.univpoitiers.backrooms.classes.Hero;
-import fr.univpoitiers.backrooms.classes.Locations;
-import fr.univpoitiers.backrooms.classes.Weapon;
+
+import fr.univpoitiers.backrooms.model.entity.Entity;
+import fr.univpoitiers.backrooms.model.entity.Hero;
+import fr.univpoitiers.backrooms.model.item.Weapon;
+import fr.univpoitiers.backrooms.model.world.Locations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -12,9 +12,10 @@ package fr.univpoitiers.backrooms.classesTest;
     // Test for the getName method
     // Test for the getVolume method
 
-import fr.univpoitiers.backrooms.classes.Backpack;
-import fr.univpoitiers.backrooms.classes.Items;
-import fr.univpoitiers.backrooms.classes.Weapon;
+
+import fr.univpoitiers.backrooms.model.item.Backpack;
+import fr.univpoitiers.backrooms.model.item.Items;
+import fr.univpoitiers.backrooms.model.item.Weapon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

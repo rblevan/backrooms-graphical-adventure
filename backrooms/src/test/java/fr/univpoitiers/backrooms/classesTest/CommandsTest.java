@@ -1,7 +1,15 @@
 package fr.univpoitiers.backrooms.classesTest;
 
-import fr.univpoitiers.backrooms.classes.*;
-import fr.univpoitiers.backrooms.enumeration.Direction;
+
+import fr.univpoitiers.backrooms.model.entity.Characters;
+import fr.univpoitiers.backrooms.model.entity.Hero;
+import fr.univpoitiers.backrooms.model.enumeration.Direction;
+import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
+import fr.univpoitiers.backrooms.model.item.Backpack;
+import fr.univpoitiers.backrooms.model.item.Food;
+import fr.univpoitiers.backrooms.model.item.Weapon;
+import fr.univpoitiers.backrooms.model.world.Exits;
+import fr.univpoitiers.backrooms.model.world.Locations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

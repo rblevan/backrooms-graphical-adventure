@@ -1,8 +1,9 @@
 package fr.univpoitiers.backrooms.classesTest;
 
-import fr.univpoitiers.backrooms.classes.Food;
-import fr.univpoitiers.backrooms.classes.Hero;
-import fr.univpoitiers.backrooms.classes.Backpack;
+
+import fr.univpoitiers.backrooms.model.entity.Hero;
+import fr.univpoitiers.backrooms.model.item.Backpack;
+import fr.univpoitiers.backrooms.model.item.Food;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
