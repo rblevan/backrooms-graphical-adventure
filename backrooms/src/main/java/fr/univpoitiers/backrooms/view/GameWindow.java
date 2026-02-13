@@ -1,117 +1,107 @@
 package fr.univpoitiers.backrooms.view;
 
 import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import javax.swing.*;
-import javax.swing.text.Caret;
-import javax.swing.text.DefaultCaret;
-import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.Queue;
 
+public class GameWindow {
 
-/**
- * Represents the main Graphical User Interface (GUI) of the game.
- * It extends JFrame to create a window simulating a retro command-line terminal.
- * <p>
- * Key features:
- * <ul>
- * <li>Displays game text with a "typewriter" effect for immersion.</li>
- * <li>Captures user input and sends it to the {@link Commands} processor.</li>
- * <li>Allows toggling instant text display by pressing the 'M' key.</li>
- * </ul>
- */
-public class GameWindow extends JFrame {
-
-    private final JTextArea textArea;
-    private final JTextField inputField;
-    private Timer typewriterTimer;
+    private final TextArea textArea;
+    private final TextField inputField;
     private final Commands commands;
+    private final Stage stage;
 
+    private Timeline typewriterTimeline;
     private boolean instantTextEnabled = false;
     private final Queue<String> textQueue = new LinkedList<>();
     private String currentTextToType;
     private int charIndex;
 
-    /**
-     * Constructs the Game Window and initializes all UI components.
-     * Sets up the black background, text areas, input fields, and event listeners.
-     *
-     * @param commands The {@link Commands} controller instance used to process user inputs.
-     */
-    public GameWindow(Commands commands) {
+    public GameWindow(Stage stage, Commands commands) {
+        this.stage = stage;
         this.commands = commands;
 
-        setTitle("Backrooms game");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setResizable(false);
+        // --- UI Components Setup ---
+        BorderPane root = new BorderPane();
+        root.setStyle("-fx-background-color: black;");
 
-        // --- UI Components ---
-        Color backgroundColor = Color.BLACK;
-        Color textColor = Color.WHITE;
-        Font font = new Font("Monospaced", Font.PLAIN, 14);
+        // Style commun pour la police mono
+        String monoStyle = "-fx-font-family: 'Monospaced'; -fx-font-size: 14px; -fx-text-fill: white;";
 
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(backgroundColor);
-        setContentPane(panel);
-
-        // Text area for game output
-        textArea = new JTextArea();
+        // Zone de texte (Sortie du jeu)
+        textArea = new TextArea();
         textArea.setEditable(false);
-        textArea.setBackground(backgroundColor);
-        textArea.setForeground(textColor);
-        textArea.setFont(font);
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
-        textArea.setMargin(new Insets(10, 10, 10, 10));
+        textArea.setWrapText(true);
+        // Style CSS pour simuler le terminal
+        textArea.setStyle("-fx-control-inner-background: black; " + monoStyle +
+                "-fx-background-color: black; -fx-focus-color: transparent; -fx-display-caret: true;");
 
-        // For this | to blink
-        Caret caret = textArea.getCaret();
-        caret.setVisible(true);
-        ((DefaultCaret) caret).setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        ScrollPane scrollPane = new ScrollPane(textArea);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+        scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
+        root.setCenter(scrollPane);
 
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setBorder(BorderFactory.createEmptyBorder());
-        panel.add(scrollPane, BorderLayout.CENTER);
+        // Zone de saisie (Bas de fenêtre)
+        HBox inputPanel = new HBox();
+        inputPanel.setPadding(new Insets(5, 10, 5, 10));
+        inputPanel.setStyle("-fx-border-color: #333333; -fx-border-width: 1 0 0 0;");
 
-        // Input field for user commands
-        JPanel inputPanel = new JPanel(new BorderLayout());
-        inputPanel.setBackground(backgroundColor);
-        inputPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.DARK_GRAY));
-        panel.add(inputPanel, BorderLayout.SOUTH);
+        Label promptLabel = new Label("> ");
+        promptLabel.setStyle(monoStyle);
 
-        // Prompt label and input field
-        JLabel promptLabel = new JLabel("> ");
-        promptLabel.setForeground(textColor);
-        promptLabel.setFont(font);
-        promptLabel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 0));
-        inputPanel.add(promptLabel, BorderLayout.WEST);
+        inputField = new TextField();
+        inputField.setStyle("-fx-background-color: black; -fx-text-fill: white; " + monoStyle + "-fx-prompt-text-fill: #555;");
+        inputField.setBorder(null);
+        HBox.setHgrow(inputField, Priority.ALWAYS);
 
-        // Input field
-        inputField = new JTextField();
-        inputField.setBackground(backgroundColor);
-        inputField.setForeground(textColor);
-        inputField.setFont(font);
-        inputField.setCaretColor(textColor);
-        inputField.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 10));
-        inputPanel.add(inputField, BorderLayout.CENTER);
+        inputPanel.getChildren().addAll(promptLabel, inputField);
+        root.setBottom(inputPanel);
 
-        inputField.addActionListener(e -> {
+        // --- Logic & Events ---
+        setupEvents();
+        setupTypewriter();
+
+        // Scene setup
+        Scene scene = new Scene(root, 800, 600);
+        stage.setTitle("Backrooms game - JavaFX");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+
+        inputField.requestFocus();
+    }
+
+    private void setupEvents() {
+        // Action lors de l'appui sur Entrée
+        inputField.setOnAction(e -> {
             String command = inputField.getText();
             if (!command.trim().isEmpty()) {
                 appendText("> " + command + "\n");
-                inputField.setText("");
+                inputField.clear();
 
                 String result = this.commands.processCommand(command);
 
                 if ("QUIT_GAME".equals(result)) {
-                    // This is the signal to close the game.
-                    // dispose() closes the window and releases its resources.
-                    // Because we set EXIT_ON_CLOSE, this will also terminate the application.
-                    dispose();
+                    stage.close();
                     return;
                 }
 
@@ -121,74 +111,58 @@ public class GameWindow extends JFrame {
             }
         });
 
-        inputField.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_M) {
-                    instantTextEnabled = !instantTextEnabled;
-                    String mode = instantTextEnabled ? "ENABLED" : "DISABLED";
+        // Toggle Instant Text avec 'M'
+        inputField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.M) {
+                instantTextEnabled = !instantTextEnabled;
 
-                    if (instantTextEnabled && typewriterTimer.isRunning()) {
-                        typewriterTimer.stop();
-                        if (currentTextToType != null && charIndex < currentTextToType.length()) {
-                            textArea.append(currentTextToType.substring(charIndex));
-                        }
-                        while (!textQueue.isEmpty()) {
-                            textArea.append(textQueue.poll());
-                        }
-                        textArea.setCaretPosition(textArea.getDocument().getLength());
-                        inputField.setEditable(true);
+                if (instantTextEnabled && typewriterTimeline.getStatus() == Timeline.Status.RUNNING) {
+                    typewriterTimeline.stop();
+                    // Finir le texte en cours
+                    if (currentTextToType != null && charIndex < currentTextToType.length()) {
+                        textArea.appendText(currentTextToType.substring(charIndex));
                     }
+                    // Vider la file
+                    while (!textQueue.isEmpty()) {
+                        textArea.appendText(textQueue.poll());
+                    }
+                    inputField.setEditable(true);
                 }
             }
         });
+    }
 
-        int delay = 30;
-        typewriterTimer = new Timer(delay, e -> {
-            // Check if we have finished the current text
+    private void setupTypewriter() {
+        typewriterTimeline = new Timeline(new KeyFrame(Duration.millis(30), e -> {
             if (currentTextToType == null || charIndex >= currentTextToType.length()) {
                 currentTextToType = textQueue.poll();
                 charIndex = 0;
 
                 if (currentTextToType == null) {
-                    typewriterTimer.stop();
+                    typewriterTimeline.stop();
                     inputField.setEditable(true);
-                    inputField.requestFocusInWindow();
                     return;
                 }
             }
 
-            textArea.append(String.valueOf(currentTextToType.charAt(charIndex)));
-            textArea.setCaretPosition(textArea.getDocument().getLength());
+            textArea.appendText(String.valueOf(currentTextToType.charAt(charIndex)));
             charIndex++;
-        });
-
-        setLocationRelativeTo(null);
-        setVisible(true);
+            textArea.selectEnd(); // Scroll automatique
+            textArea.deselect();
+        }));
+        typewriterTimeline.setCycleCount(Timeline.INDEFINITE);
     }
 
-    /**
-     * Appends text to the game's display area.
-     * <p>
-     * If "Instant Text" mode is enabled, the text appears immediately.
-     * Otherwise, the text is added to a queue and displayed character-by-character
-     * by a Timer to simulate a typing effect.
-     *
-     * @param text The string to be displayed in the terminal window.
-     */
     public void appendText(final String text) {
-        if (text == null || text.isEmpty()) {
-            return;
-        }
+        if (text == null || text.isEmpty()) return;
 
         if (instantTextEnabled) {
-            textArea.append(text);
-            textArea.setCaretPosition(textArea.getDocument().getLength());
+            textArea.appendText(text);
         } else {
             textQueue.add(text);
-            if (!typewriterTimer.isRunning()) {
+            if (typewriterTimeline.getStatus() != Timeline.Status.RUNNING) {
                 inputField.setEditable(false);
-                typewriterTimer.start();
+                typewriterTimeline.play();
             }
         }
     }
