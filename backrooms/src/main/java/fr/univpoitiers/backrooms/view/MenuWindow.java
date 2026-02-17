@@ -1,6 +1,8 @@
 package fr.univpoitiers.backrooms.view;
 
-import fr.univpoitiers.backrooms.controller.GameController;
+import fr.univpoitiers.backrooms.controller.MenuController;
+import fr.univpoitiers.backrooms.controller.TextController;
+import fr.univpoitiers.backrooms.controller.WorldController;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,12 +19,11 @@ import java.util.Objects;
 public class MenuWindow extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        GameController controller = new GameController(stage);
-        controller.prepareGame(); // On crée le monde et le perso
+        MenuController menuController = new MenuController(stage);
 
         StackPane menu = new StackPane();
 
-        controller.setVideoBackground(menu, "/video/menu_backrooms.mp4");
+        menuController.setVideoBackground(menu, "/video/menu_backrooms.mp4");
 
         String imagePath = Objects.requireNonNull(getClass().getResource("/images/title_backrooms.png")).toExternalForm();
         ImageView title = new ImageView(new Image(imagePath));
@@ -48,9 +49,11 @@ public class MenuWindow extends Application {
 
         menu.getChildren().add(menuPrincipal);
 
-        btnText.setOnAction(e -> controller.startTextMode());
-        btnWorld.setOnAction(e -> controller.startWorldMode());
+        TextController textController = new TextController(stage);
+        WorldController WorldController = new WorldController(stage);
 
+        btnText.setOnAction(e -> textController.startTextMode());
+        btnWorld.setOnAction(e -> WorldController.startWorldMode());
 
         Scene scene = new Scene(menu, 800, 600);
         stage.setTitle("Starting Menu");
