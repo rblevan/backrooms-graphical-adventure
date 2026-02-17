@@ -1,29 +1,14 @@
-package fr.univpoitiers.backrooms;
+package fr.univpoitiers.backrooms.model.world;
 
 import fr.univpoitiers.backrooms.model.entity.Characters;
-import fr.univpoitiers.backrooms.model.entity.Hero;
-import fr.univpoitiers.backrooms.model.enumeration.Direction;
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
-import fr.univpoitiers.backrooms.model.item.Backpack;
 import fr.univpoitiers.backrooms.model.item.Food;
 import fr.univpoitiers.backrooms.model.item.Spells;
 import fr.univpoitiers.backrooms.model.item.Weapon;
-import fr.univpoitiers.backrooms.model.world.Exits;
-import fr.univpoitiers.backrooms.model.world.Locations;
-import fr.univpoitiers.backrooms.view.GameWindow;
-import javafx.application.Application;
-import javafx.scene.control.TextInputDialog;
-import javafx.stage.Stage;
 
-import java.util.Optional;
+import fr.univpoitiers.backrooms.model.enumeration.Direction;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage primaryStage) {
-
-        // --- 1. Instantiation of Levels (Locations) ---
-
+public class WorldBuilder {
+    public static Locations buildWorld(){
         Locations realWorld = new Locations("Real World", "You managed to return to reality. But for how long?");
 
         Locations levelMinus1 = new Locations("Level -1 : Grey Corridor",
@@ -134,34 +119,6 @@ public class Main extends Application {
         level8.addCharacter(new Characters(80, "The_Crawling_Choir", 6, "A mass of twisted bodies on the ceiling."));
         level5.addCharacter(new Characters(70, "The_Faceless_Caretaker", 4, "A silent hotel butler with no face."));
 
-        // --- 5. Player Creation (JavaFX Dialog) ---
-
-        TextInputDialog dialog = new TextInputDialog("Anonymous");
-        dialog.setTitle("Backrooms - Character Creation");
-        dialog.setHeaderText("Welcome to the Backrooms");
-        dialog.setContentText("Enter your name:");
-
-        Optional<String> result = dialog.showAndWait();
-        String playerName = result.orElse("Anonymous").trim();
-        if (playerName.isEmpty()) playerName = "Anonymous";
-
-        Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);
-        String playerDesc = "an ordinary person who has lived a quiet, unremarkable life—working, waiting, hoping, repeating the same familiar routines day after day.\n\n";
-        Hero player = new Hero(playerName, 100, playerName, 20, playerDesc, backpack, level0);
-
-        Commands commandProcessor = new Commands(player, player.getLocation());
-
-        // --- 6. Launch View ---
-        GameWindow gameWindow = new GameWindow(primaryStage, commandProcessor);
-
-        // --- 7. Initial Display ---
-        gameWindow.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
-        gameWindow.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + player.getLocation().getDescription() + ".\n\n");
-        gameWindow.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
-                "Backpack Capacity: " + player.getBackpack().getUsedVolume() + "/" + player.getBackpack().getCapacityMax() + " units\n\n");
-    }
-
-    public static void main(String[] args) {
-        launch(args);
+        return level0;
     }
 }

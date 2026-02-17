@@ -1,9 +1,12 @@
 module fr.univpoitiers.backrooms {
     requires javafx.controls;
-    requires javafx.fxml;
+    requires javafx.graphics;
     requires java.desktop;
+    requires javafx.media;
 
-
-    opens fr.univpoitiers.backrooms to javafx.fxml;
     exports fr.univpoitiers.backrooms;
+    opens fr.univpoitiers.backrooms to javafx.graphics;
+
+    exports fr.univpoitiers.backrooms.view;
+    opens fr.univpoitiers.backrooms.view to javafx.graphics;
 }

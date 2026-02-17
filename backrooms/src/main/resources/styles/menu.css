@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: rgba(30, 30, 30, 0.8);
+    -fx-text-fill: white;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 20px;
+}
+
+.button:hover {
+    -fx-background-color: #ff0000; /* Devient rouge au survol */
+}
