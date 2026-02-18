@@ -9,8 +9,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.util.Objects;
-
 public class WorldWindow {
     private final Stage stage;
     private final Commands commands;
