@@ -14,6 +14,7 @@ public abstract class Entity {
 	private String name;
     private final int max_hp;
 
+
     /**
      * Constructs an entity with specific name and description, but default statistics.
      * Sets HP to 100 and Attack to 30 by default.
