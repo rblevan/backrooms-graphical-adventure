@@ -2,9 +2,8 @@ package fr.univpoitiers.backrooms.view;
 
 import fr.univpoitiers.backrooms.controller.WorldController;
 import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
-import javafx.geometry.HPos;
+import fr.univpoitiers.backrooms.model.world.ObstacleMap;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -13,53 +12,82 @@ import javafx.stage.Stage;
 public class WorldWindow {
     private final Stage stage;
     private final Commands commands;
+    private WorldController worldController;
 
-    public WorldWindow(Stage stage, Commands commands){
+    public WorldWindow(Stage stage, WorldController worldController, Commands commands){
         this.stage = stage;
         this.commands = commands;
-
-        WorldController worldController = new WorldController(stage);
+        this.worldController = worldController;
 
         BorderPane root = new BorderPane();
 
         // Charger l'image pour connaître ses dimensions
         Image mapImage = new Image(getClass().getResource("/images/map_level1.png").toExternalForm());
         ImageView background = new ImageView(mapImage);
+        background.setFitHeight(800);
+        background.setFitWidth(800);
 
         // Le conteneur de jeu doit faire la taille de l'image
         Pane gameLayer = new Pane();
-        gameLayer.setPrefSize(mapImage.getWidth(), mapImage.getHeight());
+        gameLayer.setPrefSize(background.getFitHeight(), background.getFitWidth());
         gameLayer.setMaxSize(Pane.USE_PREF_SIZE, Pane.USE_PREF_SIZE);
 
-        GridPane gridLayer = new GridPane();
 
         // --- ALIGNEMENT DES CASES ---
-        int nbColonnes = 28;
-        int nbLignes = 28;
-        int cellSizeX = 50;
-        int cellSizeY = 50;
-        worldController.createGrid(gridLayer, nbColonnes, nbLignes, cellSizeX);
+        int nbColumns = 28;
+        int nbRows = 28;
+        GridPane gridLayer = createGrid(nbColumns, nbRows, background);
 
         // Ajout des calques : le fond d'abord, la grille par-dessus
         gameLayer.getChildren().addAll(background, gridLayer);
 
-        // Ajout d'un item de test
-        ImageView sandwich = new ImageView(new Image(getClass().getResource("/images/sandwich.jfif").toExternalForm()));
-        sandwich.setFitWidth(cellSizeX);
-        sandwich.setFitHeight(cellSizeY);
-        sandwich.setPreserveRatio(true);
-
-        // On centre l'item dans sa case
-        GridPane.setHalignment(sandwich, HPos.CENTER);
-        gridLayer.add(sandwich, 2, 2);
+        //Ajout hero
+        ImageView heroView = addImageToLayout(gameLayer,worldController.getPlayer().getImage());
 
         // Pour que la map reste centrée si on agrandit la fenêtre
-        StackPane centerContainer = new StackPane(gameLayer);
-        root.setCenter(centerContainer);
+        root.setCenter(gameLayer);
 
         // Scene setup
         Scene scene = new Scene(root, 800, 600);
         stage.setTitle("Backrooms game - OpenWorld");
         stage.setScene(scene);
         stage.show();
-    }}
+
+        //gameLayer.requestFocus();
+        ObstacleMap obstacleMap = new ObstacleMap(28,28);
+    }
+
+    public ImageView addImageToLayout(Pane pane, Image image) {
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(50);
+        imageView.setFitHeight(50);
+        imageView.setPreserveRatio(true);
+
+        imageView.setTranslateX(worldController.getPlayer().getPosition().getX());
+        imageView.setTranslateY(worldController.getPlayer().getPosition().getY());
+
+        pane.getChildren().add(imageView);
+        return imageView;
+    }
+
+    public GridPane createGrid(int columns, int rows, ImageView imageView) {
+        GridPane grid = new GridPane();
+
+        for (int i = 0; i < columns; i++) {
+            ColumnConstraints col = new ColumnConstraints();
+            col.setPercentWidth(100.0 / columns);
+            grid.getColumnConstraints().add(col);
+        }
+
+        for (int i = 0; i < rows; i++) {
+            RowConstraints row = new RowConstraints();
+            row.setPercentHeight(100.0 / rows);
+            grid.getRowConstraints().add(row);
+        }
+        grid.setGridLinesVisible(true); // debug
+        grid.prefWidthProperty().bind(imageView.fitWidthProperty());
+        grid.prefHeightProperty().bind(imageView.fitHeightProperty());
+        return grid;
+    }
+
+}
