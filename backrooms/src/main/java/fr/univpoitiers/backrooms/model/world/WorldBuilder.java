@@ -23,9 +23,9 @@ public class WorldBuilder {
                 "You gasp as you hit the freezing water. You are floating in a flooded room. Beneath the surface lies a vast, impossible ocean. You must swim to survive.");
 
         // Chemins vers les images
-        String pathRealWorld = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_empty.png")).toExternalForm();
-        String pathLevel1 = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_empty.png")).toExternalForm();
-        String pathLevel7 = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_empty.png")).toExternalForm();
+        String pathRealWorld = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_Empty.png")).toExternalForm();
+        String pathLevel1 = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_Empty.png")).toExternalForm();
+        String pathLevel7 = Objects.requireNonNull(WorldBuilder.class.getResource("/images/Map_Empty.png")).toExternalForm();
 
         // Ajout des maps dans le HashMap
         locations.put(pathRealWorld, realWorld);
