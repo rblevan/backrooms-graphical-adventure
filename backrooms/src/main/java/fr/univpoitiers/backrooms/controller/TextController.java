@@ -55,6 +55,22 @@ public class TextController {
         gameWindow.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + player.getLocation().getDescription() + ".\n\n");
         gameWindow.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
                 "Backpack Capacity: " + player.getBackpack().getUsedVolume() + "/" + player.getBackpack().getCapacityMax() + " units\n\n");
+    }
 
+    public void winningScreen() {
+        Commands commandProcessor = new Commands(player, player.getLocation());
+        TextWindow gameWindow = new TextWindow(primaryStage, commandProcessor);
+        gameWindow.appendText("You have escaped a world where logic and physics do not apply.\n");
+        gameWindow.appendText("You escaped the madness " + player.getUsername().toUpperCase() + ", yet you feel a strange pull to return. Do you dare answer it?");
+    }
+
+    private boolean checkIfPlayerWin() {
+        return player.getLocation().getTitle().equals("Real World");
+    }
+
+    public void winScreen() {
+        if (checkIfPlayerWin()) {
+            winningScreen();
+        }
     }
 }
