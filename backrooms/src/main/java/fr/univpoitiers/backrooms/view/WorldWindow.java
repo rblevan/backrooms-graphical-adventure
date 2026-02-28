@@ -26,7 +26,7 @@ public class WorldWindow {
         BorderPane root = new BorderPane();
 
         // Charger l'image pour connaître ses dimensions
-        Image mapImage = new Image(getClass().getResource("/images/levels/map_level1.png").toExternalForm());
+        Image mapImage = new Image(getClass().getResource("/images/levels/level1.png").toExternalForm());
         ImageView background = new ImageView(mapImage);
         background.setFitHeight(800);
         background.setFitWidth(800);
