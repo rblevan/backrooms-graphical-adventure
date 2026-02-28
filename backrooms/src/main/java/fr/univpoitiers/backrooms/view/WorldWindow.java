@@ -6,7 +6,11 @@ import fr.univpoitiers.backrooms.model.world.ObstacleMap;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 public class WorldWindow {
@@ -22,7 +26,7 @@ public class WorldWindow {
         BorderPane root = new BorderPane();
 
         // Charger l'image pour connaître ses dimensions
-        Image mapImage = new Image(getClass().getResource("/images/map_level1.png").toExternalForm());
+        Image mapImage = new Image(getClass().getResource("/images/levels/map_level1.png").toExternalForm());
         ImageView background = new ImageView(mapImage);
         background.setFitHeight(800);
         background.setFitWidth(800);

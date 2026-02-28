@@ -1,6 +1,13 @@
 package fr.univpoitiers.backrooms.view;
 
-import javafx.animation.*;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.ParallelTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -23,12 +30,12 @@ public class BackroomsAnimation extends Application {
         root = new StackPane();
 
         // Initialisation du fond (Night City)
-        background = new ImageView(new Image(getClass().getResourceAsStream("/images/city_night.png")));
+        background = new ImageView(new Image(getClass().getResourceAsStream("/images/introAnimation/city_night.png")));
         background.setFitWidth(800);
         background.setFitHeight(600);
 
         // Initialisation du personnage (Steph)
-        sprite = new ImageView(new Image(getClass().getResourceAsStream("/images/steph.png")));
+        sprite = new ImageView(new Image(getClass().getResourceAsStream("/images/introAnimation/steph.png")));
         sprite.setFitHeight(200);
         sprite.setPreserveRatio(true);
         sprite.setTranslateX(-180);
@@ -76,7 +83,7 @@ public class BackroomsAnimation extends Application {
         // 2. Transition Tunnel (Changement image + Rotation en parallèle)
         PauseTransition changeToTunnel = new PauseTransition(Duration.millis(100));
         changeToTunnel.setOnFinished(e -> {
-            background.setImage(new Image(getClass().getResourceAsStream("/images/neon_tube.png")));
+            background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/neon_tube.png")));
             sprite.setTranslateX(0);
             sprite.setTranslateY(0);
             showDialogue("AAAAH !", false);
@@ -85,12 +92,12 @@ public class BackroomsAnimation extends Application {
 
         // 3. Transition Galaxie (Changement image + Rotation en parallèle)
         PauseTransition changeToGalaxy = new PauseTransition(Duration.seconds(0.1));
-        changeToGalaxy.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/cosmos.png"))));
+        changeToGalaxy.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/cosmos.png"))));
         ParallelTransition galaxyStep = new ParallelTransition(changeToGalaxy, createRotation(1.5));
 
         // 4. Transition Stars (Changement image + Rotation en parallèle)
         PauseTransition changeToStars = new PauseTransition(Duration.seconds(0.1));
-        changeToStars.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/stars.png"))));
+        changeToStars.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/stars.png"))));
         ParallelTransition starsStep = new ParallelTransition(changeToStars, createRotation(1.5));
 
         // 5. Écran Final (Positionnement en bas à droite)
