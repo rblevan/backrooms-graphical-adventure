@@ -1,93 +1,82 @@
-# project_ihm
+# 🔦 The Backrooms: Graphical Adventure
 
+<div align="center">
+  <img src="./backrooms/src/main/resources/images/title_backrooms.png" alt="Logo Backrooms" width="400"/>
+  <br>
+  <em>"Si vous ne faites pas attention et que vous noclip au mauvais endroit..."</em>
+  <br><br>
 
+  ![Status](https://img.shields.io/badge/Status-En_Développement-yellow)
+  ![Java](https://img.shields.io/badge/Java-17%2B-orange)
+  ![Swing](https://img.shields.io/badge/GUI-Swing-blue)
+  ![Architecture](https://img.shields.io/badge/Pattern-MVC-purple)
+</div>
 
-## Getting started
+---
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 🚧 Projet en cours de développement
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Ce dépôt contient la **version graphique** du jeu d'exploration *The Backrooms*.
+Il est réalisé dans le cadre de l'UE **POO-IHM 2 (2026)** de la Licence 3 Informatique à l'Université de Poitiers.
 
-## Add your files
+L'objectif est de produire deux applications interconnectées respectant le modèle **MVC** :
+1.  🎮 **Le Jeu :** Une aventure graphique en 2D (vue de dessus).
+2.  🗺️ **L'Éditeur de Niveaux :** Un outil pour concevoir les maps (placement des murs, entités, items).
 
-* [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+---
 
-```
-cd existing_repo
-git remote add origin https://gitlabens.sfa.univ-poitiers.fr/les_croussards/project_ihm.git
-git branch -M main
-git push -uf origin main
-```
+## 🏗️ Architecture Technique
 
-## Integrate with your tools
+Le projet applique strictement le patron de conception **Modèle-Vue-Contrôleur (MVC)** pour séparer la logique métier de l'interface graphique Swing.
 
-* [Set up project integrations](https://gitlabens.sfa.univ-poitiers.fr/les_croussards/project_ihm/-/settings/integrations)
+### 📂 Structure du code
+* **`model`** : Contient toute la logique du jeu (indépendante de l'affichage).
+    * `entity` : Gestion du *Hero*, des *Monstres* et des *NPC* (ex: Stéphane !).
+    * `world` : Génération procédurale ou chargement des niveaux (`WorldBuilder`, `Locations`).
+    * `item` : Système d'inventaire (`Backpack`, `Weapon`, `Food`).
+* **`view`** : L'interface graphique utilisateur (GUI).
+    * `GameWindow` : La fenêtre principale de jeu.
+    * `WorldWindow` : La vue de la carte / éditeur.
+    * `MenuWindow` : Les menus de configuration et de pause.
+* **`controller`** : Fait le lien entre les entrées utilisateur (clavier/souris) et le modèle.
+    * `GameController` : Orchestre la boucle de jeu.
 
-## Collaborate with your team
+### 🎨 Assets & Graphismes
+Le jeu utilise des sprites 2D personnalisés pour une ambiance rétro/pixel-art :
+* Environnement : `Wall_2.png`, `Ground.png`, `Void.png`.
+* Entités : `Stéphane_Pixel.png` (Guest star ?), `Entity.png`.
 
-* [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+---
 
-## Test and Deploy
+## 🚀 Fonctionnalités (Roadmap)
 
-Use the built-in continuous integration in GitLab.
+- [x] **Moteur de Jeu de base :** Boucle de jeu et initialisation de la fenêtre.
+- [x] **Architecture MVC :** Séparation claire des packages.
+- [x] **Modèle de données :** Gestion du héros, de l'inventaire et des stats.
+- [ ] **Déplacement :** Navigation fluide du personnage sur la grille.
+- [ ] **Éditeur de Niveaux :** Interface pour placer les murs et créer des maps personnalisées.
+- [ ] **Configuration :** Menu pour choisir la résolution et les touches.
+- [ ] **Système de Combat :** Interaction avec les entités hostiles.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+---
 
-***
+## 🛠️ Installation et Lancement
 
-# Editing this README
+### Prérequis
+* Java JDK 17 ou supérieur.
+* Maven.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Commandes
+```bash
+# Cloner le projet
+git clone [https://github.com/ton-pseudo/backrooms-graphical-adventure.git](https://github.com/ton-pseudo/backrooms-graphical-adventure.git)
 
-## Suggestions for a good README
+# Aller dans le dossier du module
+cd backrooms
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+# Compiler le projet
+./mvnw clean install
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+# Lancer le jeu
+# (Assurez-vous que la classe principale est bien configurée dans le pom.xml ou lancez via l'IDE)
+java -jar target/backrooms-1.0-SNAPSHOT.jar
