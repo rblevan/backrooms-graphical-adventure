@@ -1,6 +1,5 @@
 package fr.univpoitiers.backrooms.view;
 
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
@@ -18,12 +17,12 @@ import javafx.util.Duration;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.function.Consumer;
 
 public class TextWindow {
 
     private final TextArea textArea;
     private final TextField inputField;
-    private final Commands commands;
     private final Stage stage;
 
     private Timeline typewriterTimeline;
@@ -32,9 +31,10 @@ public class TextWindow {
     private String currentTextToType;
     private int charIndex;
 
-    public TextWindow(Stage stage, Commands commands) {
+    private Consumer<String> onCommandEntered;
+
+    public TextWindow(Stage stage) {
         this.stage = stage;
-        this.commands = commands;
 
         // --- UI Components Setup ---
         BorderPane root = new BorderPane();
@@ -87,6 +87,10 @@ public class TextWindow {
         inputField.requestFocus();
     }
 
+    public void setOnCommandEntered(Consumer<String> onCommandEntered) {
+        this.onCommandEntered = onCommandEntered;
+    }
+
     private void setupEvents() {
         // Action lors de l'appui sur Entrée
         inputField.setOnAction(e -> {
@@ -95,16 +99,10 @@ public class TextWindow {
                 appendText("> " + command + "\n");
                 inputField.clear();
 
-                String result = this.commands.processCommand(command);
-
-                if ("QUIT_GAME".equals(result)) {
-                    stage.close();
-                    return;
+                if (onCommandEntered != null) {
+                    onCommandEntered.accept(command);
                 }
 
-                if (result != null && !result.trim().isEmpty()) {
-                    appendText(result + "\n");
-                }
             }
         });
 
