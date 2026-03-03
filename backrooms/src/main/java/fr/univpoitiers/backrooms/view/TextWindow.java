@@ -1,6 +1,5 @@
 package fr.univpoitiers.backrooms.view;
 
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
@@ -24,7 +23,6 @@ public class TextWindow {
 
     private final TextArea textArea;
     private final TextField inputField;
-    private final Commands commands;
     private final Stage stage;
 
     private Timeline typewriterTimeline;
@@ -35,9 +33,8 @@ public class TextWindow {
 
     private Consumer<String> onCommandEntered;
 
-    public TextWindow(Stage stage, Commands commands) {
+    public TextWindow(Stage stage) {
         this.stage = stage;
-        this.commands = commands;
 
         // --- UI Components Setup ---
         BorderPane root = new BorderPane();
@@ -88,6 +85,10 @@ public class TextWindow {
         stage.show();
 
         inputField.requestFocus();
+    }
+
+    public void setOnCommandEntered(Consumer<String> onCommandEntered) {
+        this.onCommandEntered = onCommandEntered;
     }
 
     private void setupEvents() {

@@ -53,6 +53,7 @@ public class TextBuilder {
 
         level0.addExit(Direction.NORTH, new Exits(level1, "Staircase going up to Level 1", false));
         level0.addExit(Direction.SOUTH, new Exits(levelMinus1, "A glitching area leading to Level -1", false));
+        level0.addExit(Direction.SECRET, new Exits(realWorld, "How did you know this ??!", false));
 
         level1.addExit(Direction.SOUTH, new Exits(level0, "Door to Level 0", false));
         level1.addExit(Direction.EAST, new Exits(level2, "Maintenance door to Level 2", false));
