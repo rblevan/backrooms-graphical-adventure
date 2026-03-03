@@ -140,9 +140,6 @@ public abstract class Entity {
      * @param PV The new amount of HP (cannot be negative).
      */
     public void setPV(int PV) {
-        if (PV < 0) {
-            throw new UnsupportedOperationException("PV cannot be negative");
-        }
         this.PV = PV;
     }
 
@@ -153,6 +150,10 @@ public abstract class Entity {
      * @param damage The amount of damage to inflict.
      */
     public void takeDamage(int damage) {
-        this.PV -= damage;
+        if (damage < this.PV){
+        this.PV -= damage;}
+        else {
+            this.PV = 0;
+        }
     }
 }

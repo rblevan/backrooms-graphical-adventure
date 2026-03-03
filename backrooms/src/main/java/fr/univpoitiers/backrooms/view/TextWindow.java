@@ -66,7 +66,7 @@ public class TextWindow {
         promptLabel.setStyle(monoStyle);
 
         inputField = new TextField();
-        inputField.setStyle("-fx-background-color: black; -fx-text-fill: white; " + monoStyle + "-fx-prompt-text-fill: #555;");
+        inputField.setStyle("-fx-background-color: black; -fx-text-fill: white;" + monoStyle + "-fx-prompt-text-fill: #555;");
         inputField.setBorder(null);
         HBox.setHgrow(inputField, Priority.ALWAYS);
 

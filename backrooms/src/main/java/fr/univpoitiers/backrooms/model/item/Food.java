@@ -35,9 +35,18 @@ public class Food extends Items {
 
     @Override
     public String use(Hero player) {
-        player.setPV(player.getPV() + this.getHealPoints());
-        player.getBackpack().removeItem(this);
-        return player.getName() + " has been healed by " + this.getHealPoints() + " points.";
+        int currentHP = player.getPV();
+        int maxHP = player.getMax_hp();
+        int healAmount = 20; // Ou une variable propre à l'objet Food
+
+        // On calcule les nouveaux HP sans dépasser le max
+        int newHP = Math.min(currentHP + healAmount, maxHP);
+        int pointsGained = newHP - currentHP;
+
+        player.setPV(newHP); // On met à jour le joueur
+        player.getBackpack().removeItem(this); // On consomme l'item
+
+        return "You ate the " + this.getName() + ". You recovered " + pointsGained + " HP. (Total: " + newHP + "/" + maxHP + ")";
     }
 
     @Override

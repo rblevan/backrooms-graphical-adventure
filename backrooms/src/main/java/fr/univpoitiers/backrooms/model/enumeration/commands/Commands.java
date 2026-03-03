@@ -210,10 +210,7 @@ public class Commands {
 
     /**
      * Handles the "ATTACK" command.
-     * Allows the player to attack a character using a weapon from their inventory.
-     *
-     * @param args The arguments (expected: [weapon name] [target name]).
-     * @return A message describing the outcome of the attack.
+     * Permet au joueur d'attaquer une entité et gère la contre-attaque et la mort.
      */
     private String attack(String[] args) {
         if (args.length < 2) {
@@ -223,25 +220,47 @@ public class Commands {
         String weaponName = args[0];
         String targetName = args[1];
 
-        // search the weapon in the player's backpack
+        // 1. Chercher l'arme
         Items item = player.getBackpack().getItemByName(weaponName);
         if (item == null) {
             return "You don't have a " + weaponName + ".";
         }
 
-        // verify that the item is a weapon
         if (!(item instanceof Weapon)) {
             return weaponName + " is not a weapon!";
         }
+        Weapon weapon = (Weapon) item;
 
-        // search the target in the current location
-        Entity target = currentLocation.getCharacterByName(targetName);
+        // 2. Chercher la cible
+        Characters target = currentLocation.getCharacterByName(targetName);
         if (target == null) {
             return "There is no " + targetName + " here.";
         }
 
-        // --- simple message to display ---
-        return ((Weapon) item).use(player, target);
+        // 3. Le joueur attaque
+        target.takeDamage(weapon.getDamage());
+        String attackMessage = weapon.use(player, target);
+
+        // 4. Vérification de la mort du monstre
+        if (target.getPV() <= 0) {
+            currentLocation.removeCharacter(target); // On le retire de la map
+            return attackMessage + "\n" +
+                    "*** FATAL BLOW! ***\n" +
+                    "You have killed the " + target.getName() + "!";
+        }
+
+        // 5. Contre-attaque du monstre (si toujours en vie)
+        player.takeDamage(target.getAttack());
+
+        // 6. Construction du message de statut
+        StringBuilder status = new StringBuilder();
+        status.append(attackMessage).append("\n");
+        status.append(target.getName()).append(" hits you back and deals ").append(target.getAttack()).append(" damage!\n");
+        status.append("----------------------------\n");
+        status.append("> ").append(target.getName()).append(" HP: ").append(target.getPV()).append("\n");
+        status.append("> Your HP: ").append(player.getPV()).append("/").append(player.getMax_hp());
+
+        return status.toString();
     }
 
     /**
