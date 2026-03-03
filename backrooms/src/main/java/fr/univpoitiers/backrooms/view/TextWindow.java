@@ -18,6 +18,7 @@ import javafx.util.Duration;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.function.Consumer;
 
 public class TextWindow {
 
@@ -31,6 +32,8 @@ public class TextWindow {
     private final Queue<String> textQueue = new LinkedList<>();
     private String currentTextToType;
     private int charIndex;
+
+    private Consumer<String> onCommandEntered;
 
     public TextWindow(Stage stage, Commands commands) {
         this.stage = stage;
@@ -95,16 +98,10 @@ public class TextWindow {
                 appendText("> " + command + "\n");
                 inputField.clear();
 
-                String result = this.commands.processCommand(command);
-
-                if ("QUIT_GAME".equals(result)) {
-                    stage.close();
-                    return;
+                if (onCommandEntered != null) {
+                    onCommandEntered.accept(command);
                 }
 
-                if (result != null && !result.trim().isEmpty()) {
-                    appendText(result + "\n");
-                }
             }
         });
 

@@ -14,9 +14,13 @@ import java.util.Optional;
 public class TextController {
     private Hero player;
     private Stage primaryStage;
+    private TextWindow view;
+    private Commands commands;
 
-    public TextController(Stage primaryStage) {
+    public TextController(Stage primaryStage, TextWindow view) {
         this.primaryStage = primaryStage;
+        this.view = view;
+        this.commands = new Commands(player, player.getLocation());
     }
 
     public void prepareGame() {
