@@ -35,7 +35,7 @@ public class WorldController {
 
         //a revoir
         String startLevelPath = worldBuilder.getLocations().keySet().stream()
-                .filter(path -> path.contains("Map_Empty.png"))
+                .filter(path -> path.contains("/images/levels/level1.png"))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No start map found"));
         Locations startLocation = worldBuilder.getLocation(startLevelPath);
