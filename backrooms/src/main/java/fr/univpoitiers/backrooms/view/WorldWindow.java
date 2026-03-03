@@ -53,6 +53,7 @@ public class WorldWindow {
 
         // Scene setup
         Scene scene = new Scene(root, 800, 600);
+
         stage.setTitle("Backrooms game - OpenWorld");
         stage.setScene(scene);
         stage.show();
