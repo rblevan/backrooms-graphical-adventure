@@ -46,38 +46,38 @@ public class TextBuilder {
 
         // --- 2. Connecting the Exits ---
 
-        levelMinus1.addExit(Direction.WEST, new Exits(levelMinus1, "Return to the endless corridor", false));
-        levelMinus1.addExit(Direction.NORTH, new Exits(level1, "A wooden door leading to Level 1", false));
-        levelMinus1.addExit(Direction.SOUTH, new Exits(level3, "A wooden door leading to Level 3", false));
-        levelMinus1.addExit(Direction.EAST, new Exits(level0, "A wooden door leading to Level 0", false));
+        levelMinus1.addExit(Direction.WEST, new Exits(levelMinus1, "Return to the endless corridor.", false));
+        levelMinus1.addExit(Direction.NORTH, new Exits(level1, "A wooden door leading.", false));
+        levelMinus1.addExit(Direction.SOUTH, new Exits(level3, "A wooden door leading.", false));
+        levelMinus1.addExit(Direction.EAST, new Exits(level0, "A wooden door leading.", false));
 
-        level0.addExit(Direction.NORTH, new Exits(level1, "Staircase going up to Level 1", false));
-        level0.addExit(Direction.SOUTH, new Exits(levelMinus1, "A glitching area leading to Level -1", false));
+        level0.addExit(Direction.NORTH, new Exits(level1, "A staircase going up.", false));
+        level0.addExit(Direction.SOUTH, new Exits(levelMinus1, "A glitching area leading.", false));
         level0.addExit(Direction.SECRET, new Exits(realWorld, "How did you know this ??!", false));
 
-        level1.addExit(Direction.SOUTH, new Exits(level0, "Door to Level 0", false));
-        level1.addExit(Direction.EAST, new Exits(level2, "Maintenance door to Level 2", false));
+        level1.addExit(Direction.SOUTH, new Exits(level0, "A door.", false));
+        level1.addExit(Direction.EAST, new Exits(level2, "A maintenance door.", false));
 
-        level2.addExit(Direction.WEST, new Exits(level1, "Return to Level 1", false));
-        level2.addExit(Direction.NORTH, new Exits(level3, "Fire exit to Level 3", false));
-        level2.addExit(Direction.EAST, new Exits(level4, "Old corridor toward Level 4", false));
+        level2.addExit(Direction.WEST, new Exits(level1, "A old door.", false));
+        level2.addExit(Direction.NORTH, new Exits(level3, "A fire exit.", false));
+        level2.addExit(Direction.EAST, new Exits(level4, "A old corridor.", false));
 
-        level3.addExit(Direction.NORTH, new Exits(level4, "Elevator to Level 4", false));
-        level3.addExit(Direction.EAST, new Exits(level5, "Rare wooden door to Level 5", false));
+        level3.addExit(Direction.NORTH, new Exits(level4, "A elevator.", false));
+        level3.addExit(Direction.EAST, new Exits(level5, "A rare wooden door.", false));
 
-        level4.addExit(Direction.NORTH, new Exits(level5, "Stairs up to Level 5", false));
-        level4.addExit(Direction.SOUTH, new Exits(level6, "Stairs down to Level 6", false));
+        level4.addExit(Direction.NORTH, new Exits(level5, "A stairs up.", false));
+        level4.addExit(Direction.SOUTH, new Exits(level6, "A stairs down.", false));
 
-        level5.addExit(Direction.NORTH, new Exits(level6, "Boiler room to Level 6", false));
+        level5.addExit(Direction.NORTH, new Exits(level6, "A boiler room.", false));
 
-        level6.addExit(Direction.SOUTH, new Exits(level7, "Hole leading to Level 7", false));
+        level6.addExit(Direction.SOUTH, new Exits(level7, "A hole leading.", false));
 
-        level7.addExit(Direction.NORTH, new Exits(level8, "Cave opening to Level 8", false));
+        level7.addExit(Direction.NORTH, new Exits(level8, "A cave opening.", false));
 
-        level8.addExit(Direction.SOUTH, new Exits(level9, "Pitfall to Level 9", false));
-        level8.addExit(Direction.WEST, new Exits(level2, "Vent leading back to Level 2", false));
+        level8.addExit(Direction.SOUTH, new Exits(level9, "A pitfall...", false));
+        level8.addExit(Direction.WEST, new Exits(level2, "A vent.", false));
 
-        level9.addExit(Direction.EAST, new Exits(realWorld, "Golden door to real world", false));
+        level9.addExit(Direction.EAST, new Exits(realWorld, "A golden door.", false));
 
         // --- 3. Items Initialization ---
 

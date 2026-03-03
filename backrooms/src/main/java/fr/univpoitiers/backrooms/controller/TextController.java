@@ -92,4 +92,18 @@ public class TextController {
             winningScreen();
         }
     }
+
+    public void gameoverScreen() {
+        gameWindow.appendText("-----------\n");
+        gameWindow.appendText("| GAME OVER |\n");
+        gameWindow.appendText("-----------\n");
+        gameWindow.appendText("You dead...\n");
+        gameWindow.appendText("You have to type 'quit' to leave and if you want to retry.. Restart the game..");
+    }
+
+    public void gameOver() {
+        if (player.getPV() <= 0) {
+            gameoverScreen();
+        }
+    }
 }

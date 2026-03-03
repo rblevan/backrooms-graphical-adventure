@@ -208,8 +208,17 @@ public class Commands {
         // --- 3. LOOK [direction] : display a specific direction ---
 
         String directionToLookAt = args[0];
-        Direction direction = Direction.valueOf(directionToLookAt);
 
+
+        try {
+            Direction direction = Direction.valueOf(directionToLookAt.toUpperCase());
+
+            if (this.currentLocation.getExits().containsKey(direction)) {
+                return this.currentLocation.getExits().get(direction).getExitDescription();
+            } else {
+                return "There is no exit in that direction.";
+            }
+        } catch (IllegalArgumentException e) {}
 
         // no item found
         return "You don't see " + objectToLookAtName + " here or in your backpack.";
