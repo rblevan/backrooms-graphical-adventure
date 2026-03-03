@@ -7,6 +7,7 @@ import fr.univpoitiers.backrooms.model.world.Locations;
 import fr.univpoitiers.backrooms.model.world.ObstacleMap;
 import fr.univpoitiers.backrooms.model.world.Position;
 import fr.univpoitiers.backrooms.model.world.WorldBuilder;
+import fr.univpoitiers.backrooms.view.BackroomsAnimation;
 import fr.univpoitiers.backrooms.view.WorldWindow;
 import javafx.scene.Scene;
 import javafx.scene.control.TextInputDialog;
@@ -55,8 +56,11 @@ public class WorldController {
 
     public void startWorldMode() {
         prepareWorld();
-        Commands commandProcessor = new Commands(player, player.getLocation());
-        WorldWindow worldWindow = new WorldWindow(primaryStage, this,commandProcessor);
+        new BackroomsAnimation(primaryStage, () -> {
+            // Ce code s'exécute UNIQUEMENT quand l'animation est terminée
+            Commands commandProcessor = new Commands(player, player.getLocation());
+            WorldWindow worldWindow = new WorldWindow(primaryStage, this, commandProcessor);
+        });
     }
 
     private String askPlayerName() {

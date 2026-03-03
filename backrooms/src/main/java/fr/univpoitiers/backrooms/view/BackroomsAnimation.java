@@ -1,14 +1,6 @@
 package fr.univpoitiers.backrooms.view;
 
-import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
-import javafx.animation.ParallelTransition;
-import javafx.animation.PauseTransition;
-import javafx.animation.RotateTransition;
-import javafx.animation.SequentialTransition;
-import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.application.Application;
+import javafx.animation.*;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -18,23 +10,38 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class BackroomsAnimation extends Application {
+public class BackroomsAnimation {
 
     private StackPane root;
     private ImageView background;
     private ImageView sprite;
     private Label dialogueBox;
+    private Stage stage;
 
-    @Override
-    public void start(Stage primaryStage) {
-        root = new StackPane();
+    // Interface pour savoir quand l'animation se termine
+    public interface AnimationFinishedListener {
+        void onFinished();
+    }
 
-        // Initialisation du fond (Night City)
+    public BackroomsAnimation(Stage stage, AnimationFinishedListener listener) {
+        this.stage = stage;
+        this.root = new StackPane();
+
+        initContent();
+
+        Scene scene = new Scene(root, 800, 600);
+        stage.setScene(scene);
+        stage.show();
+
+        runScratchLogic(listener);
+    }
+
+    private void initContent() {
+        // Chargement des ressources avec getResourceAsStream
         background = new ImageView(new Image(getClass().getResourceAsStream("/images/introAnimation/city_night.png")));
         background.setFitWidth(800);
         background.setFitHeight(600);
 
-        // Initialisation du personnage (Steph)
         sprite = new ImageView(new Image(getClass().getResourceAsStream("/images/introAnimation/steph.png")));
         sprite.setFitHeight(200);
         sprite.setPreserveRatio(true);
@@ -48,25 +55,17 @@ public class BackroomsAnimation extends Application {
         dialogueBox.setTranslateY(100);
 
         root.getChildren().addAll(background, sprite, dialogueBox);
-
-        Scene scene = new Scene(root, 800, 600);
-        primaryStage.setTitle("Backrooms Animation");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-        runScratchLogic();
     }
 
-    // Crée une rotation continue
     private RotateTransition createRotation(double durationSeconds) {
         RotateTransition rt = new RotateTransition(Duration.seconds(durationSeconds), sprite);
-        rt.setByAngle(360 * 3); // Fait 3 tours complets
+        rt.setByAngle(360 * 3);
         rt.setInterpolator(Interpolator.LINEAR);
         return rt;
     }
 
-    private void runScratchLogic() {
-        // 1. Mouvement et dialogues de départ
+    private void runScratchLogic(AnimationFinishedListener listener) {
+        // 1. Mouvement et dialogues
         TranslateTransition moveInitial = new TranslateTransition(Duration.seconds(1), sprite);
         moveInitial.setByX(200);
 
@@ -80,7 +79,7 @@ public class BackroomsAnimation extends Application {
         glideDown.setToX(50);
         glideDown.setToY(600);
 
-        // 2. Transition Tunnel (Changement image + Rotation en parallèle)
+        // 2. Transition Tunnel
         PauseTransition changeToTunnel = new PauseTransition(Duration.millis(100));
         changeToTunnel.setOnFinished(e -> {
             background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/neon_tube.png")));
@@ -90,25 +89,23 @@ public class BackroomsAnimation extends Application {
         });
         ParallelTransition tunnelStep = new ParallelTransition(changeToTunnel, createRotation(1.5));
 
-        // 3. Transition Galaxie (Changement image + Rotation en parallèle)
+        // 3. Transition Galaxie
         PauseTransition changeToGalaxy = new PauseTransition(Duration.seconds(0.1));
         changeToGalaxy.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/cosmos.png"))));
         ParallelTransition galaxyStep = new ParallelTransition(changeToGalaxy, createRotation(1.5));
 
-        // 4. Transition Stars (Changement image + Rotation en parallèle)
+        // 4. Transition Stars
         PauseTransition changeToStars = new PauseTransition(Duration.seconds(0.1));
         changeToStars.setOnFinished(e -> background.setImage(new Image(getClass().getResourceAsStream("/images/introAnimation/stars.png"))));
         ParallelTransition starsStep = new ParallelTransition(changeToStars, createRotation(1.5));
 
-        // 5. Écran Final (Positionnement en bas à droite)
+        // 5. Écran Final
         PauseTransition finalScreen = new PauseTransition(Duration.seconds(1));
         finalScreen.setOnFinished(e -> {
             background.setImage(new Image(getClass().getResourceAsStream("/images/title_backrooms.png")));
             sprite.setRotate(0);
-            // Positionne le personnage en bas à droite (300, 200 sur une scène 800x600)
             sprite.setTranslateX(-300);
             sprite.setTranslateY(200);
-            sprite.setVisible(true); // Assure qu'il est visible s'il avait été caché
             dialogueBox.setVisible(false);
         });
 
@@ -119,8 +116,15 @@ public class BackroomsAnimation extends Application {
                 tunnelStep,
                 galaxyStep,
                 starsStep,
-                finalScreen
+                finalScreen,
+                new PauseTransition(Duration.seconds(2)) // Petite pause à la fin
         );
+
+        // Quand TOUTE la séquence est finie, on appelle le listener
+        sequence.setOnFinished(e -> {
+            if (listener != null) listener.onFinished();
+        });
+
         sequence.play();
     }
 
@@ -129,9 +133,5 @@ public class BackroomsAnimation extends Application {
         dialogueBox.setVisible(true);
         Timeline hide = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> dialogueBox.setVisible(false)));
         hide.play();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
