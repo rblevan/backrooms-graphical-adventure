@@ -14,12 +14,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import mvc.View;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.Consumer;
 
-public class TextWindow {
+public class TextWindow implements View {
 
     private final TextArea textArea;
     private final TextField inputField;
@@ -85,6 +86,16 @@ public class TextWindow {
         stage.show();
 
         inputField.requestFocus();
+    }
+
+    @Override
+    public void show() {
+        this.stage.show();
+    }
+
+    @Override
+    public void hide() {
+        this.stage.hide();
     }
 
     public void setOnCommandEntered(Consumer<String> onCommandEntered) {

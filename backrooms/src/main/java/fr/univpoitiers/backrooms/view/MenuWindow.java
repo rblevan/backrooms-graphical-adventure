@@ -3,6 +3,7 @@ package fr.univpoitiers.backrooms.view;
 import fr.univpoitiers.backrooms.controller.MenuController;
 import fr.univpoitiers.backrooms.controller.TextController;
 import fr.univpoitiers.backrooms.controller.WorldController;
+import fr.univpoitiers.backrooms.model.GameModel;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -49,10 +50,14 @@ public class MenuWindow extends Application {
 
         menu.getChildren().add(menuPrincipal);
 
-        TextController textController = new TextController(stage);
         WorldController WorldController = new WorldController(stage);
 
-        btnText.setOnAction(e -> textController.startTextMode());
+        btnText.setOnAction(e -> {
+            GameModel model = new GameModel();
+            TextWindow textWindow = new TextWindow(stage);
+            TextController textController = new TextController(model, textWindow);
+            textController.startTextMode();
+        });
         btnWorld.setOnAction(e -> WorldController.startWorldMode());
 
         Scene scene = new Scene(menu, 800, 600);
