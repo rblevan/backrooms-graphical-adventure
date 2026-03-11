@@ -1,4 +1,4 @@
-package fr.univpoitiers.backrooms.main;
+package fr.univpoitiers.backrooms.launcher;
 
 import fr.univpoitiers.backrooms.view.MenuWindow;
 import javafx.application.Application;
