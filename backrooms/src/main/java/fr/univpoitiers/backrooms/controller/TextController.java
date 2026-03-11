@@ -58,20 +58,26 @@ public class TextController {
     * */
 
     private void handleCommand(String command) {
+        // 1. On traite la commande normalement
         String result = commands.processCommand(command);
         if ("QUIT_GAME".equals(result)) {
             primaryStage.close();
             return;
-        }         if (result != null && !result.trim().isEmpty()) {
-                // On affiche le résultat, même si c'est le message de mort
-                gameWindow.appendText(result.replace("PLAYER_DEAD", "") + "\n");
-            }
-
-        // Vérification systématique de l'état du joueur
+        }
+        if (result != null && !result.trim().isEmpty()) {
+            gameWindow.appendText(result.replace("PLAYER_DEAD", "") + "\n");
+        }
+        // 2. VERIFICATION DE MORT (Priorité absolue)
         if (player.getPV() <= 0) {
-            gameoverScreen(); // Affiche l'écran GAME OVER
-        } else {
-            winScreen(); // Sinon, vérifie si le joueur a gagné
+            gameoverScreen();
+            gameWindow.disableInput();
+            return;
+        }
+        // 3. VERIFICATION DE VICTOIRE (Conditionnelle)
+        if (checkIfPlayerWin()) {
+            winScreen();
+            gameWindow.disableInput();
+            return;
         }
     }
 
@@ -86,7 +92,7 @@ public class TextController {
         gameWindow.appendText("You have escaped a world where logic and physics do not apply.\n");
         gameWindow.appendText("You escaped the madness " + player.getUsername().toUpperCase() + ", yet you feel a strange pull to return. Do you dare answer it?\n");
         gameWindow.appendText("The game is finished, you CAN'T go anywhere else.\n");
-        gameWindow.appendText("You have to type 'quit' to leave.");
+        gameWindow.appendText("Click on the x button to leave.");
     }
 
     private boolean checkIfPlayerWin() {
@@ -104,7 +110,7 @@ public class TextController {
         gameWindow.appendText("| GAME OVER |\n");
         gameWindow.appendText("-----------\n");
         gameWindow.appendText("You dead...\n");
-        gameWindow.appendText("You have to type 'quit' to leave and if you want to retry.. Restart the game..");
+        gameWindow.appendText("Click on the x button to leave and if you want to retry.. Restart the game..");
     }
 
     public void gameOver() {
