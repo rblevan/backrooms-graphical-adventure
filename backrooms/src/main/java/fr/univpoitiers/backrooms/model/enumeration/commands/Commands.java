@@ -269,6 +269,11 @@ public class Commands {
         // 5. Contre-attaque du monstre (si toujours en vie)
         player.takeDamage(target.getAttack());
 
+        // 5.1 Vérification de la mort du joueur (Game Over)
+        if (player.getPV() <= 0) {
+            return attackMessage + "\n" + target.getName() + " vous a infligé un coup fatal !\nPLAYER_DEAD";
+        }
+
         // 6. Construction du message de statut
         StringBuilder status = new StringBuilder();
         status.append(attackMessage).append("\n");

@@ -84,6 +84,7 @@ public class TextBuilder {
         level0.addItem(new Food("ALMOND_WATER", 1, "Sweet, refreshing and calming.", 20));
         level0.addItem(new Food("ENERGY_BAR", 1, "A dense bar full of calories.", 10));
         level0.addItem(new Weapon("IRON_ROD", 2, "A solid metal rod, good for basic self-defense.", 8));
+        level0.addItem(new Weapon("FEATHER", 1, "just a feather that deals no damage", 0));
 
         level1.addItem(new Weapon("CROWBAR", 3, "A solid metal tool for defense.", 15));
         level1.addItem(new Food("LUNCHBOX_SANDWICH", 1, "A stale but edible sandwich.", 12));

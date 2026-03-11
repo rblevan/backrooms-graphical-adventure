@@ -40,7 +40,7 @@ public class WorldBuilder {
 
         // Ajout des personnages
         level1.addCharacter(new Characters(35, "The_Lurker", 5, "A tall, thin creature that stalks silently from the shadows."));
-        level7.addCharacter(new Characters(60, "The_Drowned_Maiden", 4, "A drowned woman dripping black water."));
+        level7.addCharacter(new Characters(60, "The_Drowned_Maiden", 10, "A drowned woman dripping black water."));
 
         this.locations = locations;
     }

@@ -63,10 +63,19 @@ public class TextController {
             primaryStage.close();
             return;
         }
-        if (result != null && !result.trim().isEmpty()) {
-            gameWindow.appendText(result + "\n");
+        while (player.getPV() > 0 ) {
+            if (result != null && !result.trim().isEmpty()) {
+                // On affiche le résultat, même si c'est le message de mort
+                gameWindow.appendText(result.replace("PLAYER_DEAD", "") + "\n");
+            }
         }
-        winScreen();
+
+        // Vérification systématique de l'état du joueur
+        if (player.getPV() <= 0) {
+            gameoverScreen(); // Affiche l'écran GAME OVER
+        } else {
+            winScreen(); // Sinon, vérifie si le joueur a gagné
+        }
     }
 
     /**
