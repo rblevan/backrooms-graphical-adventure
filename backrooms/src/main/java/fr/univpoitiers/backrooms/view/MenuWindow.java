@@ -5,20 +5,95 @@ import fr.univpoitiers.backrooms.controller.TextController;
 import fr.univpoitiers.backrooms.controller.WorldController;
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+import mvc.View;
 
+import java.io.File;
 import java.util.Objects;
 
-public class MenuWindow extends Application {
+public class MenuWindow extends StackPane implements View {
+    /*@Override
+    public void start(Stage stage) throws Exception {*/
+    private final VBox buttonContainer;
+    private MediaPlayer mediaPlayer;
+
+    public MenuWindow() {
+        // 1. Mise en place de l'arrière-plan vidéo
+        setupVideoBackground();
+
+        // 2. Mise en place du conteneur pour les boutons (par-dessus la vidéo)
+        buttonContainer = new VBox(15);
+        buttonContainer.setAlignment(Pos.CENTER);
+
+        // On ajoute la VBox au StackPane (elle sera donc au-dessus de la MediaView)
+        this.getChildren().add(buttonContainer);
+    }
+
+    private void setupVideoBackground() {
+        try {
+            File videoFile = new File("chemin/vers/votre/video.mp4");
+            Media media = new Media(videoFile.toURI().toString());
+
+            mediaPlayer = new MediaPlayer(media);
+
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+            MediaView mediaView = new MediaView(mediaPlayer);
+
+
+            mediaView.fitWidthProperty().bind(this.widthProperty());
+            mediaView.fitHeightProperty().bind(this.heightProperty());
+            mediaView.setPreserveRatio(false); // Mettre à true si vous voulez garder les proportions
+
+            // On ajoute la vidéo en premier, pour qu'elle soit tout au fond du StackPane
+            this.getChildren().add(mediaView);
+
+            // On lance la lecture
+            mediaPlayer.play();
+
+        } catch (Exception e) {
+            System.err.println("Erreur lors du chargement de la vidéo : " + e.getMessage());
+        }
+    }
+
+    // Le Contrôleur utilisera cette méthode pour ajouter les boutons
+    // On les ajoute dans le buttonContainer, PAS directement dans le StackPane
+    public void addComponent(Node component) {
+        buttonContainer.getChildren().add(component);
+    }
+
     @Override
-    public void start(Stage stage) throws Exception {
+    public void hide() {
+        super.setVisible(false);
+        if (mediaPlayer != null) {
+            mediaPlayer.pause(); // On met en pause si on cache le menu
+        }
+    }
+
+    @Override
+    public void show() {
+        super.setVisible(true);
+        if (mediaPlayer != null) {
+            mediaPlayer.play(); // On relance quand on affiche le menu
+        }
+    }
+}
+
+
+/*
+
         MenuController menuController = new MenuController(stage);
 
         StackPane menu = new StackPane();
@@ -60,4 +135,4 @@ public class MenuWindow extends Application {
         stage.setScene(scene);
         stage.show();
     }
-}
+}*/
