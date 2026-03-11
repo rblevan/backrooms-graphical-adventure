@@ -191,6 +191,7 @@ public class Commands {
             return "Inside your backpack, you see: " + String.join(", ", itemNames) + ". Your backpack is currently using " + this.player.getBackpack().getUsedVolume() + " out of " + this.player.getBackpack().getCapacityMax() + " units of space.";
         }
 
+
         // serach in the location
         targetItem = this.currentLocation.getItemByName(objectToLookAtName);
 
@@ -204,8 +205,24 @@ public class Commands {
             return targetItem.getDescription() + "\nThe volume of this item is " + targetItem.getVolume() + " units.";
         }
 
+        // --- 3. LOOK [direction] : display a specific direction ---
+
+        String directionToLookAt = args[0];
+
+
+        try {
+            Direction direction = Direction.valueOf(directionToLookAt.toUpperCase());
+
+            if (this.currentLocation.getExits().containsKey(direction)) {
+                return this.currentLocation.getExits().get(direction).getExitDescription();
+            } else {
+                return "There is no exit in that direction.";
+            }
+        } catch (IllegalArgumentException e) {}
+
         // no item found
         return "You don't see " + objectToLookAtName + " here or in your backpack.";
+
     }
 
     /**
