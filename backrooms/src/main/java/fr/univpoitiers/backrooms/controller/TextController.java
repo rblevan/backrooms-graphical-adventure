@@ -62,13 +62,10 @@ public class TextController {
         if ("QUIT_GAME".equals(result)) {
             primaryStage.close();
             return;
-        }
-        while (player.getPV() > 0 ) {
-            if (result != null && !result.trim().isEmpty()) {
+        }         if (result != null && !result.trim().isEmpty()) {
                 // On affiche le résultat, même si c'est le message de mort
                 gameWindow.appendText(result.replace("PLAYER_DEAD", "") + "\n");
             }
-        }
 
         // Vérification systématique de l'état du joueur
         if (player.getPV() <= 0) {
