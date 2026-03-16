@@ -12,16 +12,6 @@ public class QuitView extends Button implements View {
         super("Quit");
     }
 
-    @Override
-    public void hide(){
-        super.setVisible(false);
-    }
-
-    @Override
-    public void show(){
-        super.setVisible(true);
-    }
-
     public boolean dialogConfirmExit(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation dialog");

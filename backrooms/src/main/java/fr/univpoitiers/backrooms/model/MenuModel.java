@@ -3,7 +3,18 @@ package fr.univpoitiers.backrooms.model;
 import mvc.Model;
 
 public class MenuModel implements Model {
-    public MenuModel() {}
+    private String videoPath = null;
+
+    public MenuModel() {
+    }
+
+    public void setVideoPath(String videoPath) {
+        this.videoPath = videoPath;
+    }
+
+    public String getVideoPath() {
+        return this.videoPath;
+    }
 
     @Override
     public void run(){

@@ -5,9 +5,4 @@ package mvc;
 /// @author X. Skapin
 /// @version 1.0.0
 public interface View {
-    /// Hide this instance
-    public void hide();
-
-    /// Show this instance
-    public void show();
 }
