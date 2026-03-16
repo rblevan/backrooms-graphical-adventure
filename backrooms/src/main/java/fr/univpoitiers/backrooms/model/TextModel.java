@@ -10,12 +10,12 @@ import mvc.Model;
 
 import java.util.Optional;
 
-public class GameModel implements Model {
+public class TextModel implements Model {
     private Hero player;
     private Locations startLocation;
     private Commands commands;
 
-    public GameModel() {
+    public TextModel() {
         this.startLocation = TextBuilder.buildWorld();
         String playerName = askPlayerName();
         Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);

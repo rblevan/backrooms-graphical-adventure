@@ -20,11 +20,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.Consumer;
 
-public class TextWindow implements View {
+public class TextView implements View {
 
     private final TextArea textArea;
     private final TextField inputField;
-    private final Stage stage;
 
     private Timeline typewriterTimeline;
     private boolean instantTextEnabled = false;
@@ -34,8 +33,8 @@ public class TextWindow implements View {
 
     private Consumer<String> onCommandEntered;
 
-    public TextWindow(Stage stage) {
-        this.stage = stage;
+    public TextView(/*Stage stage*/) {
+       // this.stage = stage;
 
         // --- UI Components Setup ---
         BorderPane root = new BorderPane();
@@ -78,24 +77,17 @@ public class TextWindow implements View {
         setupEvents();
         setupTypewriter();
 
-        // Scene setup
+      /*  // Scene setup
         Scene scene = new Scene(root, 800, 600);
         stage.setTitle("Backrooms game - JavaFX");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
 
+
+       */
+
         inputField.requestFocus();
-    }
-
-    @Override
-    public void show() {
-        this.stage.show();
-    }
-
-    @Override
-    public void hide() {
-        this.stage.hide();
     }
 
     public void setOnCommandEntered(Consumer<String> onCommandEntered) {

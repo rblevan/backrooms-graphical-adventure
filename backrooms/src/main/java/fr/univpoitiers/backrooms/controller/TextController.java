@@ -1,36 +1,40 @@
 package fr.univpoitiers.backrooms.controller;
 
-import fr.univpoitiers.backrooms.model.GameModel;
+import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
 import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
-import fr.univpoitiers.backrooms.view.TextWindow;
+import fr.univpoitiers.backrooms.view.TextView;
+import javafx.scene.Node;
 import javafx.stage.Stage;
 import mvc.Controller;
 import mvc.Model;
 import mvc.View;
 
 public class TextController extends Controller {
-    private Stage primaryStage;
-    private Commands commands;
 
-    public TextController(Model model, View view) {
-        super(model, view);
+    public TextController() {
+        super(new TextModel(), new TextView());
 
-        if (this.view instanceof TextWindow) {
-            ((TextWindow) this.view).setOnCommandEntered(this::handleCommand);
+        if (this.view instanceof TextView) {
+            ((TextView) this.view).setOnCommandEntered(this::handleCommand);
         }
     }
 
-    public void startTextMode() {
-        GameModel gameModel = (GameModel) this.getModel();
-        TextWindow window = (TextWindow) this.getView();
+  /*  public static TextController create() {
+        TextController textController = new TextController();
 
-        window.show();
+    }
+*/
+    public void startTextMode() {
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView gameView = (TextView) this.getView();
+
+     //   window.show();
 
         Hero player = gameModel.getHero();
-        window.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
-        window.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + " " + player.getLocation().getDescription() + ".\n\n");
-        window.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
+        gameView.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
+        gameView.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + " " + player.getLocation().getDescription() + ".\n\n");
+        gameView.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
                 "Backpack Capacity: " + player.getBackpack().getUsedVolume() + "/" + player.getBackpack().getCapacityMax() + " units\n\n");
     }
 
@@ -41,13 +45,13 @@ public class TextController extends Controller {
     * */
 
     private void handleCommand(String command) {
-        GameModel gameModel = (GameModel) this.getModel();
-        TextWindow window = (TextWindow) this.getView();
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView window = (TextView) this.getView();
         Hero player = gameModel.getHero();
         String result = gameModel.getCommands().processCommand(command);
 
         if ("QUIT_GAME".equals(result)) {
-            window.hide();
+          //  window.hide();
             return;
         }         if (result != null && !result.trim().isEmpty()) {
                 // On affiche le résultat, même si c'est le message de mort
@@ -67,8 +71,8 @@ public class TextController extends Controller {
     * */
 
     public void winningScreen() {
-        GameModel gameModel = (GameModel) this.getModel();
-        TextWindow window = (TextWindow) this.getView();
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView window = (TextView) this.getView();
         Hero player = gameModel.getHero();
         window.appendText("----------\n");
         window.appendText("| VICTORY |\n");
@@ -80,7 +84,7 @@ public class TextController extends Controller {
     }
 
     private boolean checkIfPlayerWin() {
-        GameModel gameModel = (GameModel) this.getModel();
+        TextModel gameModel = (TextModel) this.getModel();
         Hero player = gameModel.getHero();
         return player.getLocation().getTitle().equals("Real World");
     }
@@ -92,7 +96,7 @@ public class TextController extends Controller {
     }
 
     public void gameoverScreen() {
-        TextWindow window = (TextWindow) this.getView();
+        TextView window = (TextView) this.getView();
         window.appendText("-----------\n");
         window.appendText("| GAME OVER |\n");
         window.appendText("-----------\n");
