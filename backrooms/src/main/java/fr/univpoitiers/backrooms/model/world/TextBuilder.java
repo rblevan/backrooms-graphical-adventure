@@ -6,6 +6,7 @@ import fr.univpoitiers.backrooms.model.item.Spells;
 import fr.univpoitiers.backrooms.model.item.Weapon;
 
 import fr.univpoitiers.backrooms.model.enumeration.Direction;
+import mvc.Model;
 
 public class TextBuilder {
     public static Locations buildWorld(){
