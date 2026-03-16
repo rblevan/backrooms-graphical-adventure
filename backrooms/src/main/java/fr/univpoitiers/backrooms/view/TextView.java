@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.Consumer;
 
-public class TextView implements View {
+public class TextView extends BorderPane implements View {
 
     private final TextArea textArea;
     private final TextField inputField;
@@ -37,8 +37,7 @@ public class TextView implements View {
        // this.stage = stage;
 
         // --- UI Components Setup ---
-        BorderPane root = new BorderPane();
-        root.setStyle("-fx-background-color: black;");
+        this.setStyle("-fx-background-color: black;");
 
         // Style commun pour la police mono
         String monoStyle = "-fx-font-family: 'Monospaced'; -fx-font-size: 14px; -fx-text-fill: white;";
@@ -55,7 +54,7 @@ public class TextView implements View {
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
         scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
-        root.setCenter(scrollPane);
+        this.setCenter(scrollPane);
 
         // Zone de saisie (Bas de fenêtre)
         HBox inputPanel = new HBox();
@@ -71,21 +70,11 @@ public class TextView implements View {
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
         inputPanel.getChildren().addAll(promptLabel, inputField);
-        root.setBottom(inputPanel);
+        this.setBottom(inputPanel);
 
         // --- Logic & Events ---
         setupEvents();
         setupTypewriter();
-
-      /*  // Scene setup
-        Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Backrooms game - JavaFX");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-
-
-       */
 
         inputField.requestFocus();
     }

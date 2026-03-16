@@ -20,16 +20,14 @@ public class TextController extends Controller {
         }
     }
 
-  /*  public static TextController create() {
+    public static TextController create() {
         TextController textController = new TextController();
-
+        return textController;
     }
-*/
+
     public void startTextMode() {
         TextModel gameModel = (TextModel) this.getModel();
         TextView gameView = (TextView) this.getView();
-
-     //   window.show();
 
         Hero player = gameModel.getHero();
         gameView.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
@@ -51,7 +49,6 @@ public class TextController extends Controller {
         String result = gameModel.getCommands().processCommand(command);
 
         if ("QUIT_GAME".equals(result)) {
-          //  window.hide();
             return;
         }         if (result != null && !result.trim().isEmpty()) {
                 // On affiche le résultat, même si c'est le message de mort

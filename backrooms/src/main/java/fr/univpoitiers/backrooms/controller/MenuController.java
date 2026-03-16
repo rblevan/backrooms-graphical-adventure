@@ -1,11 +1,16 @@
 package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.MenuModel;
+import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.view.MenuView;
+import fr.univpoitiers.backrooms.view.TextView;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import mvc.Controller;
+import mvc.Model;
 
 import java.util.Objects;
 
@@ -43,7 +48,14 @@ public class MenuController extends Controller {
         ButtonController buttonTextGame = ButtonController.create("Game Text");
         ButtonController buttonWorldGame =  ButtonController.create("World Game");
 
+        Button btnText = (Button) buttonTextGame.getView();
+        Button btnWorld = (Button) buttonWorldGame.getView();
+
         menuView.setupVideoBackground(menuModel.getVideoPath());
+
+        btnText.setOnAction(event -> {
+            switchToGameText();
+        });
 
         // --- 2. AJOUT À LA LISTE DES SOUS-CONTRÔLEURS ---
         this.subControllers.add(quitController);
@@ -66,7 +78,9 @@ public class MenuController extends Controller {
 
         Stage stage =  (Stage) currentView.getScene().getWindow();
 
-       // TextController textController = TextController.create();
-      //  stage.getScene().setRoot((Parent) textController.getView());
+        TextController textController = TextController.create();
+        this.subControllers.add(textController);
+        textController.startTextMode();
+        stage.getScene().setRoot((Parent) textController.getView());
     }
 }
