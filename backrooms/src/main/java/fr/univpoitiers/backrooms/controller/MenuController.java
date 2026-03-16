@@ -3,6 +3,7 @@ package fr.univpoitiers.backrooms.controller;
 import fr.univpoitiers.backrooms.model.MenuModel;
 import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.view.MenuView;
+import fr.univpoitiers.backrooms.view.MyImageView;
 import fr.univpoitiers.backrooms.view.TextView;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -36,7 +37,9 @@ public class MenuController extends Controller {
         menuModel.setVideoPath("/video/menu_backrooms.mp4");
         menuModel.setTitlePath("/images/title_backrooms.png");
 
-        ImageView titleView = menuView.createImageView(menuModel.getTitlePath());
+        MyImageView myImageView = new MyImageView();
+
+        ImageView titleView = myImageView.createImageView(menuModel.getTitlePath());
         titleView.setFitWidth(400);
         titleView.setFitHeight(200);
         titleView.setPreserveRatio(true);

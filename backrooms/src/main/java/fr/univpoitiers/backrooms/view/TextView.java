@@ -33,9 +33,7 @@ public class TextView extends BorderPane implements View {
 
     private Consumer<String> onCommandEntered;
 
-    public TextView(/*Stage stage*/) {
-       // this.stage = stage;
-
+    public TextView() {
         // --- UI Components Setup ---
         this.setStyle("-fx-background-color: black;");
 

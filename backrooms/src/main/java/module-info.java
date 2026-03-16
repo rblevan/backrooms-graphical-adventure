@@ -3,6 +3,7 @@ module fr.univpoitiers.backrooms {
     requires javafx.graphics;
     requires java.desktop;
     requires javafx.media;
+    requires javafx.base;
 
     exports fr.univpoitiers.backrooms.main;
     opens fr.univpoitiers.backrooms.main to javafx.graphics;

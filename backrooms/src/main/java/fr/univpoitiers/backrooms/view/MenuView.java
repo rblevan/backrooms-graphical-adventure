@@ -79,11 +79,7 @@ public class MenuView extends BorderPane implements View {
         }
     }
 
-    public ImageView createImageView(String imagePath) {
-        String imagePathLong = Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm();
-        ImageView imageView = new ImageView(new Image(imagePathLong));
-        return imageView;
-    }
+
 
     public HBox getButtonContainerCenter() {
         return buttonContainerCenter;
