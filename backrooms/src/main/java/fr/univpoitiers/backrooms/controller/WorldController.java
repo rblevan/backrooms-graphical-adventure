@@ -1,33 +1,27 @@
 package fr.univpoitiers.backrooms.controller;
 
+import fr.univpoitiers.backrooms.model.WorldModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
 import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import fr.univpoitiers.backrooms.model.item.Backpack;
 import fr.univpoitiers.backrooms.model.world.Locations;
-import fr.univpoitiers.backrooms.model.world.ObstacleMap;
 import fr.univpoitiers.backrooms.model.world.Position;
 import fr.univpoitiers.backrooms.model.world.WorldBuilder;
 import fr.univpoitiers.backrooms.view.BackroomsAnimation;
-import fr.univpoitiers.backrooms.view.WorldWindow;
-import javafx.scene.Scene;
+import fr.univpoitiers.backrooms.view.WorldView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
+import mvc.Controller;
 
 import java.util.Objects;
 import java.util.Optional;
 
-public class WorldController {
+public class WorldController extends Controller {
     private Hero player;
-    private Stage primaryStage;
 
-    public WorldController(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    public WorldController() {
+        super(new WorldModel(), new WorldView());
     }
 
     public void prepareWorld() {
@@ -59,7 +53,7 @@ public class WorldController {
         new BackroomsAnimation(primaryStage, () -> {
             // Ce code s'exécute UNIQUEMENT quand l'animation est terminée
             Commands commandProcessor = new Commands(player, player.getLocation());
-            WorldWindow worldWindow = new WorldWindow(primaryStage, this, commandProcessor);
+            WorldView worldWindow = new WorldView(primaryStage, this, commandProcessor);
         });
     }
 

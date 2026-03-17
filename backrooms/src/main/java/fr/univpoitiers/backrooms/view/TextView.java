@@ -14,16 +14,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import mvc.View;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.Consumer;
 
-public class TextWindow {
+public class TextView extends BorderPane implements View {
 
     private final TextArea textArea;
     private final TextField inputField;
-    private final Stage stage;
 
     private Timeline typewriterTimeline;
     private boolean instantTextEnabled = false;
@@ -33,12 +33,9 @@ public class TextWindow {
 
     private Consumer<String> onCommandEntered;
 
-    public TextWindow(Stage stage) {
-        this.stage = stage;
-
+    public TextView() {
         // --- UI Components Setup ---
-        BorderPane root = new BorderPane();
-        root.setStyle("-fx-background-color: black;");
+        this.setStyle("-fx-background-color: black;");
 
         // Style commun pour la police mono
         String monoStyle = "-fx-font-family: 'Monospaced'; -fx-font-size: 14px; -fx-text-fill: white;";
@@ -55,7 +52,7 @@ public class TextWindow {
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
         scrollPane.setStyle("-fx-background: black; -fx-border-color: black;");
-        root.setCenter(scrollPane);
+        this.setCenter(scrollPane);
 
         // Zone de saisie (Bas de fenêtre)
         HBox inputPanel = new HBox();
@@ -71,18 +68,11 @@ public class TextWindow {
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
         inputPanel.getChildren().addAll(promptLabel, inputField);
-        root.setBottom(inputPanel);
+        this.setBottom(inputPanel);
 
         // --- Logic & Events ---
         setupEvents();
         setupTypewriter();
-
-        // Scene setup
-        Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Backrooms game - JavaFX");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
 
         inputField.requestFocus();
     }

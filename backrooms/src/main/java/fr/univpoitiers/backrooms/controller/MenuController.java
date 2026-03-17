@@ -1,41 +1,89 @@
 package fr.univpoitiers.backrooms.controller;
 
-import javafx.scene.layout.StackPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import fr.univpoitiers.backrooms.model.MenuModel;
+import fr.univpoitiers.backrooms.model.TextModel;
+import fr.univpoitiers.backrooms.view.MenuView;
+import fr.univpoitiers.backrooms.view.MyImageView;
+import fr.univpoitiers.backrooms.view.TextView;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import mvc.Controller;
+import mvc.Model;
 
-public class MenuController {
-    private Stage primaryStage;
+import java.util.Objects;
 
-    public MenuController(Stage stage) {
-        this.primaryStage = stage;
+public class MenuController extends Controller {
+    /// Initialise complètement l'instance
+    public static MenuController create() {
+        MenuController controller = new MenuController();
+        controller.init();
+        return controller;
     }
-    public void setVideoBackground(StackPane root, String videoPath) {
-        var resource = getClass().getResource(videoPath);
 
-        if (resource == null) {
-            System.err.println("Erreur : Le fichier vidéo est introuvable dans resources !");
-            return;
-        }
-        // 1. Charger la vidéo
-        String path = resource.toExternalForm();
-        Media media = new Media(path);
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        MediaView mediaView = new MediaView(mediaPlayer);
+    /// Constructeur privé
+    private MenuController() {
+        super(new MenuModel(), new MenuView());
+    }
 
-        // 2. Paramétrer la vidéo
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);// Boucle infini
-        mediaPlayer.setVolume(0.5);
-        mediaPlayer.play();
+    /// Initialise le contenu (création et liaison des sous-contrôleurs)
+    private void init() {
+        // On récupère la vue du menu qu'on a créée dans super()
+        MenuView menuView = (MenuView) super.getView();
+        MenuModel menuModel = (MenuModel) this.getModel();
 
-        // 3. Ajuster la taille (pour que ça remplisse la fenêtre)
-        mediaView.fitWidthProperty().bind(root.widthProperty());
-        mediaView.fitHeightProperty().bind(root.heightProperty());
-        mediaView.setPreserveRatio(false); // Force le remplissage
+        menuModel.setVideoPath("/video/menu_backrooms.mp4");
+        menuModel.setTitlePath("/images/title_backrooms.png");
 
-        // 4. L'ajouter au début du StackPane (en dessous de tout le reste)
-        root.getChildren().add(0,mediaView);
+        MyImageView myImageView = new MyImageView();
+
+        ImageView titleView = myImageView.createImageView(menuModel.getTitlePath());
+        titleView.setFitWidth(400);
+        titleView.setFitHeight(200);
+        titleView.setPreserveRatio(true);
+
+        // --- 1. CRÉATION DES SOUS-CONTRÔLEURS ---
+
+        // On utilise la classe du prof pour le bouton Quitter
+        QuitController quitController = QuitController.create();
+        ButtonController buttonTextGame = ButtonController.create("Game Text");
+        ButtonController buttonWorldGame =  ButtonController.create("World Game");
+
+        Button btnText = (Button) buttonTextGame.getView();
+        Button btnWorld = (Button) buttonWorldGame.getView();
+
+        menuView.setupVideoBackground(menuModel.getVideoPath());
+
+        btnText.setOnAction(event -> {
+            switchToGameText();
+        });
+
+        // --- 2. AJOUT À LA LISTE DES SOUS-CONTRÔLEURS ---
+        this.subControllers.add(quitController);
+        this.subControllers.add(buttonTextGame);
+        this.subControllers.add(buttonWorldGame);
+
+
+        // --- 3. AJOUT DES VUES DANS LA VUE PRINCIPALE ---
+
+        // On met le bouton quitter pour qu'il apparaisse en bas
+        menuView.addComponentHBox((Node) buttonWorldGame.getView());
+        menuView.addComponentHBox((Node) buttonTextGame.getView());
+        menuView.addComponentCenter(titleView);
+        menuView.addComponentCenter(menuView.getButtonContainerCenter());
+        menuView.addComponentBottom((Node) quitController.getView());
+    }
+
+    public void switchToGameText(){
+        Node currentView = (Node) this.getView();
+
+        Stage stage =  (Stage) currentView.getScene().getWindow();
+
+        TextController textController = TextController.create();
+        this.subControllers.add(textController);
+        textController.startTextMode();
+        stage.getScene().setRoot((Parent) textController.getView());
     }
 }
