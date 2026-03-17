@@ -10,8 +10,9 @@ import javafx.scene.input.KeyEvent;
 import mvc.Controller;
 
 public class MyImageController extends Controller {
-    public MyImageController() {
-        super(new MyImageModel(),new MyImageView());
+
+    public MyImageController(String ressourcePath) {
+        super(new MyImageModel(),new MyImageView(ressourcePath));
     }
 
     public void moveWithKeyBoard(Scene scene){
@@ -87,5 +88,6 @@ public class MyImageController extends Controller {
                 }
             }
         };
+        animationTimer.start();
     }
 }

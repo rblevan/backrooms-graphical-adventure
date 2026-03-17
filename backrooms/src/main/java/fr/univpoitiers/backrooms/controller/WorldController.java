@@ -20,11 +20,17 @@ import java.util.Optional;
 public class WorldController extends Controller {
     private Hero player;
 
+    public static WorldController create(){
+        WorldController worldController = new WorldController();
+        worldController.init();
+        return worldController;
+    }
+
     public WorldController() {
         super(new WorldModel(), new WorldView());
     }
 
-    public void prepareWorld() {
+    public void init() {
         // 1. Initialisation du monde
         WorldBuilder worldBuilder = new WorldBuilder();
 
@@ -45,8 +51,6 @@ public class WorldController extends Controller {
         Image imageHero = new Image(pathImage);
         this.player = new Hero(playerName, 100, playerName, 20, playerDesc, backpack, startLocation, imageHero, new Position(100,100));
     }
-
-
 
     public void startWorldMode() {
         prepareWorld();

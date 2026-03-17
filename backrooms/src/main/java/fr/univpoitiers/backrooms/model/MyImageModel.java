@@ -9,6 +9,14 @@ public class MyImageModel implements Model {
     private boolean goEast;
     private boolean running;
 
+    public MyImageModel(){
+        this.goNorth = false;
+        this.goSouth = false;
+        this.goWest = false;
+        this.goEast = false;
+        this.running = false;
+    }
+
     public boolean isGoSouth() {
         return goSouth;
     }

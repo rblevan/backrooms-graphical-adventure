@@ -16,11 +16,8 @@ import mvc.View;
 public class WorldView extends BorderPane implements View {
 
     public WorldView(){
-
-
-
         // Charger l'image pour connaître ses dimensions
-        MyImageView myImageView = new MyImageView();
+        //MyImageView myImageView = new MyImageView();
 
         Image mapImage = new Image(getClass().getResource("/images/levels/level1.png").toExternalForm());
         ImageView background = new ImageView(mapImage);
@@ -42,8 +39,8 @@ public class WorldView extends BorderPane implements View {
     //    gameLayer.getChildren().addAll(background, gridLayer);
 
         //Ajout hero
-        MyImageView myImageView = new MyImageView();
-        ImageView heroView = myImageView.addImageToLayout(gameLayer,worldController.getPlayer().getImage());
+        //MyImageView myImageView = new MyImageView();
+        //ImageView heroView = myImageView.addImageToLayout(gameLayer,worldController.getPlayer().getImage());
 
 
         // Pour que la map reste centrée si on agrandit la fenêtre
