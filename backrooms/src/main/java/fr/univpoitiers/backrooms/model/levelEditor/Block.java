@@ -1,26 +1,39 @@
 package fr.univpoitiers.backrooms.model.levelEditor;
 
-public class Block {
+// [IMPORTS]
+import fr.univpoitiers.backrooms.model.enumeration.BlockSubtype;
+import fr.univpoitiers.backrooms.model.enumeration.BlockType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-    //BLOCKS ENUMS
-    public enum Type {VOID, GROUND, WALL, CORNER}
-    public enum Subtype {NONE, INNERCORNER, OUTERCORNER, BEAM1, BEAM2, BEAM3}
+public class Block {
 
     // ATTRIBUTES
     private int level; // Can be 1 or 2 depending on the level skin we want for the block
-    private Type type; // Block Type, see Type enum
-    private Subtype subtype; // Block Subtype, see Subtype enum
+    private BlockType type; // Block Type, see Type enum
+    private BlockSubtype subtype; // Block Subtype, see Subtype enum
     private Object containedObject; // Can be null, entity, food...
     private int orientation; // Can be 1, 2, 3 or 4
+    private ImageView sprite; // Changes following the other attributes of the block
 
-    // [CONSTRUCTOR]
+    // [CONSTRUCTORS]
     public Block()
     {
         this.level = 1;
-        this.type = Type.VOID;
-        this.subtype = Subtype.NONE;
+        this.type = BlockType.VOID;
+        this.subtype = BlockSubtype.NONE;
         this.containedObject = null;
         this.orientation = 1;
+        this.sprite = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
+    }
+
+    public Block(int l, BlockType t, BlockSubtype stype, int o, ImageView s)
+    {
+        this.level = l;
+        this.type = t;
+        this.subtype = stype;
+        this.orientation = o;
+        this.sprite = s;
     }
 
     // [METHODS]
@@ -32,13 +45,13 @@ public class Block {
     }
 
     //* Gets the block's Type */
-    public Type getType()
+    public BlockType getType()
     {
         return this.type;
     }
 
     //* Gets the block's Subtype */
-    public Subtype getSubType()
+    public BlockSubtype getSubType()
     {
         return this.subtype;
     }
@@ -55,6 +68,12 @@ public class Block {
         return this.orientation;
     }
 
+    //* Gets the block's Sprite ImageView */
+    public ImageView getSprite()
+    {
+        return this.sprite;
+    }
+
     /**
      * Updates a block to redefine it, Block.containedObject is redefine in following specific methods
      *
@@ -62,13 +81,15 @@ public class Block {
      * @param t             New block type
      * @param stype         New block subtype
      * @param o             New block orientation
+     * @param s             New block sprite
      */
-    public void updateBlock(int l, Type t, Subtype stype, int o)
+    public void updateBlock(int l, BlockType t, BlockSubtype stype, int o, ImageView s)
     {
         this.level = l;
         this.type = t;
         this.subtype = stype;
         this.orientation = o;
+        this.sprite = s;
     }
 
     /**
