@@ -1,9 +1,10 @@
 package fr.univpoitiers.backrooms.model.levelEditor;
 
-// [IMPORTS]
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,6 +14,7 @@ public class LevelEditor {
     // [ATTRIBUTES]
     private Level level = new Level();
     private Block selectedPresetBlock = new Block();
+    private static final String SAVE_DIR = "../../../../ressources/levels/";
 
     // [METHODS]
     
@@ -46,6 +48,17 @@ public class LevelEditor {
     }
 
     /**
+     * Build a path from SAVE_DIR + filename + .json to save / load a level.json file
+     * 
+     * @param filename      The name wanted for the file
+     * @return              Absolute path to write / read level.json file   
+     */
+    private Path buildPath(String filename)
+    {
+        return Path.of(SAVE_DIR, filename + ".json").toAbsolutePath();
+    }
+
+    /**
      * Saves created level into a .json file
      *
      * @param filename  The name you want to save your level as
@@ -54,10 +67,12 @@ public class LevelEditor {
     {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        try (FileWriter writer = new FileWriter(filename))
+        Path path = buildPath(filename);
+
+        try (BufferedWriter writer = Files.newBufferedWriter(path))
         {
             gson.toJson(level, writer);
-            System.out.println("Level sauvegardé !");
+            System.out.println("Level sauvegardé : " + path);
         }
 
         catch (IOException e)
@@ -74,15 +89,15 @@ public class LevelEditor {
     public void loadLevel(String filename)
     {
         Gson gson = new Gson();
+        Path path = buildPath(filename);
 
-        try (FileReader reader = new FileReader(filename))
+        try (BufferedReader reader = Files.newBufferedReader(path))
         {
             level = gson.fromJson(reader, Level.class);
 
-            // Recréer les sprites
             rebuildSprites();
 
-            System.out.println("Level chargé !");
+            System.out.println("Level chargé : " + path);
         }
         
         catch (IOException e)
