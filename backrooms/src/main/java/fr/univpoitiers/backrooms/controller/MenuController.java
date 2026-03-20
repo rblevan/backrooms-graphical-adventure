@@ -37,12 +37,9 @@ public class MenuController extends Controller {
         menuModel.setVideoPath("/video/menu_backrooms.mp4");
         menuModel.setTitlePath("/images/title_backrooms.png");
 
-        MyImageView myImageView = new MyImageView();
+        MyImageView myImageView = new MyImageView(menuModel.getTitlePath());
 
-        ImageView titleView = myImageView.createImageView(menuModel.getTitlePath());
-        titleView.setFitWidth(400);
-        titleView.setFitHeight(200);
-        titleView.setPreserveRatio(true);
+        ImageView titleView = myImageView.getImageView();
 
         // --- 1. CRÉATION DES SOUS-CONTRÔLEURS ---
 
@@ -58,6 +55,10 @@ public class MenuController extends Controller {
 
         btnText.setOnAction(event -> {
             switchToGameText();
+        });
+
+        btnWorld.setOnAction(event -> {
+            switchToGameWorld();
         });
 
         // --- 2. AJOUT À LA LISTE DES SOUS-CONTRÔLEURS ---
@@ -86,4 +87,16 @@ public class MenuController extends Controller {
         textController.startTextMode();
         stage.getScene().setRoot((Parent) textController.getView());
     }
+
+    public void switchToGameWorld(){
+        Node currentView = (Node) this.getView();
+
+        Stage stage = (Stage) currentView.getScene().getWindow();
+
+        WorldController worldController = WorldController.create();
+        this.subControllers.add(worldController);
+        worldController.startWorldGame();
+        stage.getScene().setRoot((Parent) worldController.getView());
+
+     }
 }

@@ -1,5 +1,6 @@
 package fr.univpoitiers.backrooms.view;
 
+import fr.univpoitiers.backrooms.model.MyImageModel;
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -9,6 +10,15 @@ import mvc.View;
 import java.util.Objects;
 
 public class MyImageView extends ImageView implements View {
+    private ImageView imageView;
+
+    public MyImageView(String path){
+        this.imageView = createImageView(path);
+    }
+
+    public ImageView getImageView(){
+        return this.imageView;
+    }
 
     public ImageView createImageView(String imagePath) {
         String imagePathLong = Objects.requireNonNull(getClass().getResource(imagePath)).toExternalForm();
@@ -27,4 +37,5 @@ public class MyImageView extends ImageView implements View {
         pane.getChildren().add(imageView);
         return imageView;
     }
+
 }
