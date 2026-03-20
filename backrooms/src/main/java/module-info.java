@@ -5,6 +5,9 @@ module fr.univpoitiers.backrooms {
     requires javafx.media;
     requires javafx.base;
 
+    requires com.google.gson;
+    opens fr.univpoitiers.backrooms.model.levelEditor to com.google.gson;
+
     exports fr.univpoitiers.backrooms.main;
     opens fr.univpoitiers.backrooms.main to javafx.graphics;
 
