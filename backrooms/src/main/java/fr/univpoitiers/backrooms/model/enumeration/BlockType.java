@@ -4,5 +4,6 @@ public enum BlockType {
     VOID,
     GROUND,
     WALL,
-    CORNER
+    CORNER,
+    EXIT
 }
