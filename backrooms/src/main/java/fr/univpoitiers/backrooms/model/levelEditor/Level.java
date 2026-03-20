@@ -10,7 +10,7 @@ public class Level {
     private int spawnY;
 
     // [CONSTRUCTOR]
-    public Level()
+    public Level ()
     {
         blockgrid = new Block[sizeX][sizeY];
 
@@ -36,7 +36,7 @@ public class Level {
 
     /**
      * Sets the blockgrid to copy another blockgrid (from charged level.json for example)
-     * 
+     *
      * @param bg    Source blockgrid
      */
     public void setBlockgrid(Block[][]bg)
