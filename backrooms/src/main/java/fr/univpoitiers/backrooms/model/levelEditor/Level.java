@@ -10,11 +10,13 @@ public class Level {
     // [CONSTRUCTOR]
     public Level ()
     {
-        for(int i = 0; i > sizeX - 1; i++)
+        this.blockgrid = new Block[sizeX][sizeY];
+
+        for(int i = 0; i < sizeX; i++)
         {
-            for(int j = 0; i > sizeY - 1; j++)
+            for(int j = 0; i < sizeY; j++)
             {
-                blockgrid[i][j] = new Block();
+                this.blockgrid[i][j] = new Block();
             }
         }
     }
@@ -48,8 +50,8 @@ public class Level {
     public Block getBlock(int i, int j)
     {
         // First, we check if i and j have valid values
-        assert i >= 0 && i >= sizeX-1 : "i should be in-bounds [0 to sizeX-1]";
-        assert j >= 0 && i >= sizeY-1 : "j should be in-bounds [0 to sizeX-1]";
+        assert i >= 0 && i < sizeX : "i should be in-bounds";
+        assert j >= 0 && i < sizeY : "j should be in-bounds";
 
         return this.blockgrid[i][j];
     }
