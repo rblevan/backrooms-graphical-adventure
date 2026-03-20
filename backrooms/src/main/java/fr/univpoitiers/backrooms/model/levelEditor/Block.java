@@ -3,18 +3,19 @@ package fr.univpoitiers.backrooms.model.levelEditor;
 // [IMPORTS]
 import fr.univpoitiers.backrooms.model.enumeration.BlockSubtype;
 import fr.univpoitiers.backrooms.model.enumeration.BlockType;
+import fr.univpoitiers.backrooms.model.item.Items;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Block {
 
     // ATTRIBUTES
-    private int level; // Can be 1 or 2 depending on the level skin we want for the block
-    private BlockType type; // Block Type, see Type enum
-    private BlockSubtype subtype; // Block Subtype, see Subtype enum
-    private Object containedObject; // Can be null, entity, food...
-    private int orientation; // Can be 1, 2, 3 or 4
-    private ImageView sprite; // Changes following the other attributes of the block
+    private int level;                      // Can be 1 or 2 depending on the level skin we want for the block
+    private BlockType type;                 // Block Type, see Type enum
+    private BlockSubtype subtype;           // Block Subtype, see Subtype enum
+    private Items containedObject;          // Can be Food, Weapon, Spell...
+    private int orientation;                // Can be 1, 2, 3 or 4
+    private transient ImageView sprite;     // Changes following the other attributes of the block
 
     // [CONSTRUCTORS]
     public Block()
@@ -57,7 +58,7 @@ public class Block {
     }
 
     //* Gets the block's ContainedObject */
-    public Object getContainedObject()
+    public Items getContainedObject()
     {
         return this.containedObject;
     }
@@ -93,11 +94,26 @@ public class Block {
     }
 
     /**
+     * Transform an existing block to give it properties from another block, making it a perfect copy
+     * 
+     * @param source            Source block
+     */
+    public void copyBlock(Block source)
+    {
+        this.level = source.level;
+        this.type = source.type;
+        this.subtype = source.subtype;
+        this.containedObject = source.containedObject;
+        this.orientation = source.orientation;
+        this.sprite = source.sprite;
+    }
+
+    /**
      * Add an Object / Updates block's conainedObject
      *
      * @param obj           New block containedObject
      */
-    public void updateObject(Object obj)
+    public void updateObject(Items obj)
     {
         this.containedObject = obj;
     }
@@ -106,5 +122,19 @@ public class Block {
     public void removeObject()
     {
         this.containedObject = null;
+    }
+
+    //* As the Block's sprite not serializable, we need to rebuild / recharge it thanks to the Block's properties */
+    public void rebuildSprite()
+    {
+        String path = "/images/blocks/";
+
+        path += "level" + level + "/";
+        path += type.toString().toLowerCase() + "_";
+        path += subtype.toString().toLowerCase() + "_";
+        path += orientation + ".png";
+
+        Image image = new Image(getClass().getResourceAsStream(path));
+        this.sprite = new ImageView(image);
     }
 }
