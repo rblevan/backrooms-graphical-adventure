@@ -2,7 +2,6 @@ package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.WorldModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import fr.univpoitiers.backrooms.model.item.Backpack;
 import fr.univpoitiers.backrooms.model.world.Locations;
 import fr.univpoitiers.backrooms.model.world.Position;
@@ -28,8 +27,9 @@ public class WorldController extends Controller {
         WorldModel model = (WorldModel) getModel();
         WorldView view = (WorldView) getView();
 
-        Hero player = createHero();
-        model.setPlayer(player);
+        createHero(model);
+
+        Hero player = model.getPlayer();
 
         model.setMapPath("/images/levels/level1.png");
 
@@ -37,7 +37,7 @@ public class WorldController extends Controller {
         view.updateDisplay(model.getMapPath(),player);
     }
 
-    private Hero createHero() {
+    private void createHero(WorldModel model) {
         // 1. Demander le nom au joueur (Logique d'entrée)
         String playerName = Hero.askPlayerName();
 
@@ -65,7 +65,7 @@ public class WorldController extends Controller {
         Locations startLocation = worldBuilder.getLocation("/images/levels/level1.png");
 
         // 7. Instanciation finale
-        return new Hero(
+        model.setPlayer(new Hero(
                 playerName,
                 initialHealth,
                 playerName, // Identifiant ou pseudo
@@ -75,7 +75,7 @@ public class WorldController extends Controller {
                 startLocation,
                 imageHero,
                 startPosition
-        );
+        ));
     }
 }
    /* public static WorldController create(){

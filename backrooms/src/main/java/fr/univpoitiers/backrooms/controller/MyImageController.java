@@ -11,8 +11,8 @@ import mvc.Controller;
 
 public class MyImageController extends Controller {
 
-    public MyImageController(String ressourcePath) {
-        super(new MyImageModel(),new MyImageView(ressourcePath));
+    public MyImageController() {
+        super(new MyImageModel(),new MyImageView());
     }
 
     public void moveWithKeyBoard(Scene scene){

@@ -1,22 +1,16 @@
 package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.MenuModel;
-import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.view.MenuView;
 import fr.univpoitiers.backrooms.view.MyImageView;
-import fr.univpoitiers.backrooms.view.TextView;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import mvc.Controller;
-import mvc.Model;
-
-import java.util.Objects;
 
 public class MenuController extends Controller {
-    /// Initialise complètement l'instance
+    // Initialise complètement l'instance
     public static MenuController create() {
         MenuController controller = new MenuController();
         controller.init();
@@ -37,9 +31,8 @@ public class MenuController extends Controller {
         menuModel.setVideoPath("/video/menu_backrooms.mp4");
         menuModel.setTitlePath("/images/title_backrooms.png");
 
-        MyImageView myImageView = new MyImageView(menuModel.getTitlePath());
-
-        ImageView titleView = myImageView.getImageView();
+        MyImageView titleBackrooms = new MyImageView();
+        titleBackrooms.updateImage(menuModel.getTitlePath());
 
         // --- 1. CRÉATION DES SOUS-CONTRÔLEURS ---
 
@@ -72,7 +65,7 @@ public class MenuController extends Controller {
         // On met le bouton quitter pour qu'il apparaisse en bas
         menuView.addComponentHBox((Node) buttonWorldGame.getView());
         menuView.addComponentHBox((Node) buttonTextGame.getView());
-        menuView.addComponentCenter(titleView);
+        menuView.addComponentCenter(titleBackrooms);
         menuView.addComponentCenter(menuView.getButtonContainerCenter());
         menuView.addComponentBottom((Node) quitController.getView());
     }

@@ -13,12 +13,12 @@ public class WorldView extends BorderPane implements View {
 
     private Pane gameLayer;
     private ImageView background;
-    private ImageView heroSprite;
+    private MyImageView heroSprite;
 
     public WorldView() {
         this.gameLayer = new Pane();
         this.background = new ImageView();
-        this.heroSprite = new ImageView();
+        this.heroSprite = new MyImageView();
 
         // Configuration de base
         background.setFitHeight(800);
