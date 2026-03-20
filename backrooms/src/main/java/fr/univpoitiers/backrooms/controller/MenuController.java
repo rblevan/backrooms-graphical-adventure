@@ -57,6 +57,10 @@ public class MenuController extends Controller {
             switchToGameText();
         });
 
+        btnWorld.setOnAction(event -> {
+            switchToGameWorld();
+        });
+
         // --- 2. AJOUT À LA LISTE DES SOUS-CONTRÔLEURS ---
         this.subControllers.add(quitController);
         this.subControllers.add(buttonTextGame);
@@ -89,6 +93,10 @@ public class MenuController extends Controller {
 
         Stage stage = (Stage) currentView.getScene().getWindow();
 
-        WorldController worldController =
+        WorldController worldController = WorldController.create();
+        this.subControllers.add(worldController);
+        worldController.startWorldGame();
+        stage.getScene().setRoot((Parent) worldController.getView());
+
      }
 }

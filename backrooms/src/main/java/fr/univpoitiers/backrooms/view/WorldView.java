@@ -1,21 +1,45 @@
 package fr.univpoitiers.backrooms.view;
 
-import fr.univpoitiers.backrooms.controller.WorldController;
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
-import javafx.animation.AnimationTimer;
+import fr.univpoitiers.backrooms.model.entity.Hero;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.RowConstraints;
-import javafx.stage.Stage;
 import mvc.View;
+
+import java.util.Objects;
 
 public class WorldView extends BorderPane implements View {
 
-    public WorldView(){
+    private Pane gameLayer;
+    private ImageView background;
+    private ImageView heroSprite;
+
+    public WorldView() {
+        this.gameLayer = new Pane();
+        this.background = new ImageView();
+        this.heroSprite = new ImageView();
+
+        // Configuration de base
+        background.setFitHeight(800);
+        background.setFitWidth(800);
+
+        gameLayer.getChildren().addAll(background, heroSprite);
+        this.setCenter(gameLayer);
+    }
+
+    // Méthode pour mettre à jour l'affichage depuis le Controller
+    public void updateDisplay(String mapPath, Hero hero) {
+        // Mise à jour du fond
+        this.background.setImage(new Image(Objects.requireNonNull(getClass().getResource(mapPath)).toExternalForm()));
+
+        // Mise à jour du héros
+        this.heroSprite.setImage(hero.getImage());
+        this.heroSprite.setX(hero.getPosition().getX());
+        this.heroSprite.setY(hero.getPosition().getY());
+    }
+}
+   /* public WorldView(){
         // Charger l'image pour connaître ses dimensions
         //MyImageView myImageView = new MyImageView();
 
@@ -57,7 +81,7 @@ public class WorldView extends BorderPane implements View {
         stage.show();
 
         //gameLayer.requestFocus();
-        ObstacleMap obstacleMap = new ObstacleMap(28,28);     */
+        ObstacleMap obstacleMap = new ObstacleMap(28,28);
     }
 
     public GridPane createGrid(int columns, int rows, ImageView imageView) {
@@ -81,3 +105,4 @@ public class WorldView extends BorderPane implements View {
     }
 
 }
+*/
