@@ -76,7 +76,10 @@ public class TextView extends BorderPane implements View {
 
         inputField.requestFocus();
     }
-
+    public void disableInput() {
+        this.inputField.setDisable(true);
+        this.inputField.setEditable(false); // Optionnel : pour bien montrer que c'est bloqué
+    }
     public void setOnCommandEntered(Consumer<String> onCommandEntered) {
         this.onCommandEntered = onCommandEntered;
     }
