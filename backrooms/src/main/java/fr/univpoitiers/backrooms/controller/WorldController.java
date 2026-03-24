@@ -2,7 +2,6 @@ package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.WorldModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import fr.univpoitiers.backrooms.model.item.Backpack;
 import fr.univpoitiers.backrooms.model.world.Locations;
 import fr.univpoitiers.backrooms.model.world.Position;

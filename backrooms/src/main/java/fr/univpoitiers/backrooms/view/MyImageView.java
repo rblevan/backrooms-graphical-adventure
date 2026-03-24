@@ -1,7 +1,5 @@
 package fr.univpoitiers.backrooms.view;
 
-import fr.univpoitiers.backrooms.model.MyImageModel;
-import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
