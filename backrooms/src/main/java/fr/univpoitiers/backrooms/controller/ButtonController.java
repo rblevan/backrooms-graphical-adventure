@@ -2,7 +2,6 @@ package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.ButtonModel;
 import fr.univpoitiers.backrooms.view.ButtonView;
-import javafx.event.ActionEvent;
 import mvc.Controller;
 
 import java.util.Objects;
