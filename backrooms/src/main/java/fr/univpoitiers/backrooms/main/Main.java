@@ -14,18 +14,14 @@ public class Main extends Application {
         // La méthode .create() s'occupe de l'init et du modèle/vue
         MenuController menuController = MenuController.create();
 
-        // 2. On récupère la vue associée au contrôleur
         // On doit caster en Pane (ou Parent) pour l'ajouter à la scène
         Pane root = (Pane) menuController.getView();
 
         // 3. Configuration de la Scène
         Scene scene = new Scene(root, 1280, 720);
 
-        // Optionnel : Ajouter un fichier CSS si tu en as un
-        // scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-
         // 4. Configuration du Stage (Fenêtre)
-        primaryStage.setTitle("The Backrooms - Escape the University");
+        primaryStage.setTitle("The Backrooms");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false); // Souvent préférable pour un menu avec vidéo
         primaryStage.show();
