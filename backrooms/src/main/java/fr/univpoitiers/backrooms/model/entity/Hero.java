@@ -3,7 +3,11 @@ package fr.univpoitiers.backrooms.model.entity;
 import fr.univpoitiers.backrooms.model.world.Locations;
 import fr.univpoitiers.backrooms.model.item.Backpack;
 import fr.univpoitiers.backrooms.model.world.Position;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
+
+import java.util.Objects;
+import java.util.Optional;
 
 public class Hero extends Entity {
 
@@ -94,5 +98,19 @@ public class Hero extends Entity {
 
     public Image getImage() {
         return image;
+    }
+
+    public static String askPlayerName() {
+        TextInputDialog dialog = new TextInputDialog("Anonymous");
+        dialog.setTitle("Backrooms - Character Creation");
+        dialog.setHeaderText("Welcome to the Backrooms");
+        dialog.setContentText("Enter your name:");
+
+        Optional<String> result = dialog.showAndWait();
+
+        if(result.orElse("Anonymous").trim().isEmpty()){
+            return "Anonymous";
+        }
+        return result.get();
     }
 }

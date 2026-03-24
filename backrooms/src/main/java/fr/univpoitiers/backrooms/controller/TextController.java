@@ -1,53 +1,38 @@
 package fr.univpoitiers.backrooms.controller;
 
+import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
 import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
-import fr.univpoitiers.backrooms.model.item.Backpack;
-import fr.univpoitiers.backrooms.model.world.Locations;
-import fr.univpoitiers.backrooms.model.world.TextBuilder;
-import fr.univpoitiers.backrooms.view.TextWindow;
-import javafx.scene.control.TextInputDialog;
+import fr.univpoitiers.backrooms.view.TextView;
+import javafx.scene.Node;
 import javafx.stage.Stage;
+import mvc.Controller;
+import mvc.Model;
+import mvc.View;
 
-import java.util.Optional;
+public class TextController extends Controller {
 
-public class TextController {
-    private Hero player;
-    private Stage primaryStage;
-    private TextWindow gameWindow;
-    private Commands commands;
-    public TextController(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    public TextController() {
+        super(new TextModel(), new TextView());
+
+        if (this.view instanceof TextView) {
+            ((TextView) this.view).setOnCommandEntered(this::handleCommand);
+        }
     }
 
-    public void prepareGame() {
-        Locations startLocation = TextBuilder.buildWorld();
-        String playerName = askPlayerName();
-        Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);
-        String playerDesc = "an ordinary person who has lived a quiet, unremarkable life...";
-
-        this.player = new Hero(playerName, 100, playerName, 20, playerDesc, backpack, startLocation);
-    }
-
-    private String askPlayerName() {
-        TextInputDialog dialog = new TextInputDialog("Anonymous");
-        dialog.setTitle("Backrooms - Character Creation");
-        dialog.setHeaderText("Welcome to the Backrooms");
-        dialog.setContentText("Enter your name:");
-
-        Optional<String> result = dialog.showAndWait();
-        return result.orElse("Anonymous").trim().isEmpty() ? "Anonymous" : result.get();
+    public static TextController create() {
+        TextController textController = new TextController();
+        return textController;
     }
 
     public void startTextMode() {
-        prepareGame();
-        this.commands = new Commands(player, player.getLocation());
-        this.gameWindow = new TextWindow(primaryStage);
-        this.gameWindow.setOnCommandEntered(this::handleCommand);
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView gameView = (TextView) this.getView();
 
-        gameWindow.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
-        gameWindow.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + " " + player.getLocation().getDescription() + ".\n\n");
-        gameWindow.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
+        Hero player = gameModel.getHero();
+        gameView.appendText("Welcome " + player.getUsername().toUpperCase() + " to the Backrooms.\n");
+        gameView.appendText("You awaken as " + player.getName() + ", " + player.getDescription() + " " + player.getLocation().getDescription() + ".\n\n");
+        gameView.appendText("Health: " + player.getPV() + "/" + player.getMax_hp() + "HP\n" +
                 "Backpack Capacity: " + player.getBackpack().getUsedVolume() + "/" + player.getBackpack().getCapacityMax() + " units\n\n");
     }
 
@@ -58,26 +43,23 @@ public class TextController {
     * */
 
     private void handleCommand(String command) {
-        // 1. On traite la commande normalement
-        String result = commands.processCommand(command);
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView window = (TextView) this.getView();
+        Hero player = gameModel.getHero();
+        String result = gameModel.getCommands().processCommand(command);
+
         if ("QUIT_GAME".equals(result)) {
-            primaryStage.close();
             return;
-        }
-        if (result != null && !result.trim().isEmpty()) {
-            gameWindow.appendText(result.replace("PLAYER_DEAD", "") + "\n");
-        }
-        // 2. VERIFICATION DE MORT (Priorité absolue)
+        }         if (result != null && !result.trim().isEmpty()) {
+                // On affiche le résultat, même si c'est le message de mort
+                window.appendText(result.replace("PLAYER_DEAD", "") + "\n");
+            }
+
+        // Vérification systématique de l'état du joueur
         if (player.getPV() <= 0) {
             gameoverScreen();
-            gameWindow.disableInput();
-            return;
-        }
-        // 3. VERIFICATION DE VICTOIRE (Conditionnelle)
-        if (checkIfPlayerWin()) {
+        } else {
             winScreen();
-            gameWindow.disableInput();
-            return;
         }
     }
 
@@ -86,16 +68,21 @@ public class TextController {
     * */
 
     public void winningScreen() {
-        gameWindow.appendText("----------\n");
-        gameWindow.appendText("| VICTORY |\n");
-        gameWindow.appendText("----------\n");
-        gameWindow.appendText("You have escaped a world where logic and physics do not apply.\n");
-        gameWindow.appendText("You escaped the madness " + player.getUsername().toUpperCase() + ", yet you feel a strange pull to return. Do you dare answer it?\n");
-        gameWindow.appendText("The game is finished, you CAN'T go anywhere else.\n");
-        gameWindow.appendText("Click on the x button to leave.");
+        TextModel gameModel = (TextModel) this.getModel();
+        TextView window = (TextView) this.getView();
+        Hero player = gameModel.getHero();
+        window.appendText("----------\n");
+        window.appendText("| VICTORY |\n");
+        window.appendText("----------\n");
+        window.appendText("You have escaped a world where logic and physics do not apply.\n");
+        window.appendText("You escaped the madness " + player.getUsername().toUpperCase() + ", yet you feel a strange pull to return. Do you dare answer it?\n");
+        window.appendText("The game is finished, you CAN'T go anywhere else.\n");
+        window.appendText("You have to type 'quit' to leave.");
     }
 
     private boolean checkIfPlayerWin() {
+        TextModel gameModel = (TextModel) this.getModel();
+        Hero player = gameModel.getHero();
         return player.getLocation().getTitle().equals("Real World");
     }
 
@@ -106,16 +93,12 @@ public class TextController {
     }
 
     public void gameoverScreen() {
-        gameWindow.appendText("-----------\n");
-        gameWindow.appendText("| GAME OVER |\n");
-        gameWindow.appendText("-----------\n");
-        gameWindow.appendText("You dead...\n");
-        gameWindow.appendText("Click on the x button to leave and if you want to retry.. Restart the game..");
+        TextView window = (TextView) this.getView();
+        window.appendText("-----------\n");
+        window.appendText("| GAME OVER |\n");
+        window.appendText("-----------\n");
+        window.appendText("You dead...\n");
+        window.appendText("You have to type 'quit' to leave and if you want to retry.. Restart the game..");
     }
 
-    public void gameOver() {
-        if (player.getPV() <= 0) {
-            gameoverScreen();
-        }
-    }
 }
