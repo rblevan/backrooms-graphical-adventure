@@ -29,8 +29,7 @@ public class LevelEditorController extends Controller {
     }
 
     public void selectBrush(BlockType type) {
-        // Pour simplifier dans un premier temps, on change juste le type du pinceau
-        // Plus tard, tu pourras aussi changer l'image (sprite) associée
+        // à changer
         this.editorModel.getSelectedPresetBlock().updateBlock(
                 1, type, null, 1, null
         );
