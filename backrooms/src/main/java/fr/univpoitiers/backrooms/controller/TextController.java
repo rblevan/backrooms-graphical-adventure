@@ -2,13 +2,8 @@ package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
-import fr.univpoitiers.backrooms.model.enumeration.commands.Commands;
 import fr.univpoitiers.backrooms.view.TextView;
-import javafx.scene.Node;
-import javafx.stage.Stage;
 import mvc.Controller;
-import mvc.Model;
-import mvc.View;
 
 public class TextController extends Controller {
 
@@ -55,11 +50,17 @@ public class TextController extends Controller {
                 window.appendText(result.replace("PLAYER_DEAD", "") + "\n");
             }
 
-        // Vérification systématique de l'état du joueur
+        // cas mort
         if (player.getPV() <= 0) {
             gameoverScreen();
-        } else {
+            window.disableInput();
+            return;
+        }
+        // cas win
+        if (checkIfPlayerWin()) {
             winScreen();
+            window.disableInput();
+            return;
         }
     }
 

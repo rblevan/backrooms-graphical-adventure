@@ -1,19 +1,14 @@
 package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.MenuModel;
-import fr.univpoitiers.backrooms.model.TextModel;
 import fr.univpoitiers.backrooms.view.MenuView;
 import fr.univpoitiers.backrooms.view.MyImageView;
-import fr.univpoitiers.backrooms.view.TextView;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import mvc.Controller;
-import mvc.Model;
-
-import java.util.Objects;
 
 public class MenuController extends Controller {
     /// Initialise complètement l'instance
