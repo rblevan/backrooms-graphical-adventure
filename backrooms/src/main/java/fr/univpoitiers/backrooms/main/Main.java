@@ -21,7 +21,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 1280, 720);
 
         // 4. Configuration du Stage (Fenêtre)
-        primaryStage.setTitle("The Backrooms - Escape the University");
+        primaryStage.setTitle("The Backrooms");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false); // Souvent préférable pour un menu avec vidéo
         primaryStage.show();
