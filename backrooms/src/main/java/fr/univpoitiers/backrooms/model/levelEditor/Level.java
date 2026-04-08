@@ -4,19 +4,19 @@ public class Level {
     
     // ATTRIBUTES
     private Block[][] blockgrid;
-    private final int sizeX = 30;   // Default level size is 30x30 blocks
-    private final int sizeY = 30;   // Default level size is 30x30 blocks
+    private static final int SIZE_X = 30;   // Default level size is 30x30 blocks
+    private static final int SIZE_Y = 30;   // Default level size is 30x30 blocks
     private int spawnX;
     private int spawnY;
 
     // [CONSTRUCTOR]
     public Level ()
     {
-        blockgrid = new Block[sizeX][sizeY];
+        blockgrid = new Block[SIZE_X][SIZE_Y];
 
-        for(int i = 0; i < sizeX - 1; i++)
+        for(int i = 0; i < SIZE_X; i++)
         {
-            for(int j = 0; i < sizeY - 1; j++)
+            for(int j = 0; j < SIZE_Y; j++)
             {
                 blockgrid[i][j] = new Block();
             }
@@ -47,13 +47,13 @@ public class Level {
     //* Gets the Level's sizeX */
     public int getSizeX()
     {
-        return this.sizeX;
+        return Level.SIZE_X;
     }
 
     //* Gets the Level's sizeY */
     public int getSizeY()
     {
-        return this.sizeY;
+        return Level.SIZE_Y;
     }
 
     //* Gets the Level's spawnX */
@@ -77,7 +77,7 @@ public class Level {
     public Block getBlock(int i, int j)
     {
         // First, we check if i and j have valid values
-        if(i < 0 || i >= sizeX || j < 0 || j >= sizeY)
+        if((i < 0) || (i >= SIZE_X) || (j < 0) || (j >= SIZE_Y))
         {
             throw new IndexOutOfBoundsException("Block indices out of bounds.");
         }

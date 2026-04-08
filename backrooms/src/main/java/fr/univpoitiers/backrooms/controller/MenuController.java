@@ -42,9 +42,13 @@ public class MenuController extends Controller {
         QuitController quitController = QuitController.create();
         ButtonController buttonTextGame = ButtonController.create("Game Text");
         ButtonController buttonWorldGame =  ButtonController.create("World Game");
+        ButtonController buttonLevelEditor = ButtonController.create("Level Editor");
+        ButtonController buttonCustomLevel = ButtonController.create("Custom Level");
 
         Button btnText = (Button) buttonTextGame.getView();
         Button btnWorld = (Button) buttonWorldGame.getView();
+        Button btnLevelEditor = (Button) buttonLevelEditor.getView();
+        Button btnCustomLevel = (Button) buttonCustomLevel.getView();
 
         menuView.setupVideoBackground(menuModel.getVideoPath());
 
@@ -54,6 +58,14 @@ public class MenuController extends Controller {
 
         btnWorld.setOnAction(event -> {
             switchToGameWorld();
+        });
+
+        btnLevelEditor.setOnAction(event -> {
+            switchToLevelEditor();
+        });
+
+        btnCustomLevel.setOnAction(event -> {
+            switchToCustomLevel();
         });
 
         // --- 2. AJOUT À LA LISTE DES SOUS-CONTRÔLEURS ---
@@ -67,6 +79,8 @@ public class MenuController extends Controller {
         // On met le bouton quitter pour qu'il apparaisse en bas
         menuView.addComponentHBox((Node) buttonWorldGame.getView());
         menuView.addComponentHBox((Node) buttonTextGame.getView());
+        menuView.addComponentHBox((Node) buttonLevelEditor.getView());
+        menuView.addComponentHBox((Node) buttonCustomLevel.getView());
         menuView.addComponentCenter(titleView);
         menuView.addComponentCenter(menuView.getButtonContainerCenter());
         menuView.addComponentBottom((Node) quitController.getView());
@@ -93,5 +107,26 @@ public class MenuController extends Controller {
         worldController.startWorldGame();
         stage.getScene().setRoot((Parent) worldController.getView());
 
-     }
+    }
+
+    public void switchToLevelEditor(){
+        Node currentView = (Node) this.getView();
+
+        Stage stage = (Stage) currentView.getScene().getWindow();
+
+        LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
+        levelEditorController.createLevel();
+        this.subControllers.add(levelEditorController);
+        stage.getScene().setRoot((Parent) levelEditorController.getView());
+    }
+
+    public void switchToCustomLevel(){
+        /* Ajouter du code qui permet de : 
+            - Afficher une fenêtre avec un champ de texte à remplir avec le nom du niveau souhaîté
+            - Dans la fenêtre un bouton pour accepter / lancer le chargement du niveau
+            - Message d'erreur si le nom donné pour le fichier ne correspond à aucun fichier
+            - Nouvelle scène World en chargeant le niveau avec LevelEditor.loadLevel("nomdufichier")
+            */ 
+
+    }
 }

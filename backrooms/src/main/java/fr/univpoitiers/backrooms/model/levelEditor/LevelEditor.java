@@ -30,18 +30,21 @@ public class LevelEditor {
         return this.selectedPresetBlock;
     }
 
+    //* Updates selectedPresetBlock with a new selected Block */
+    public void updateSelectedPresetBlock(Block newSelection)
+    {
+        this.selectedPresetBlock = newSelection;
+    }
+
     //* Rebuild sprites of the level by rebuilding each Block's sprite */
     private void rebuildSprites()
     {
         Block[][] grid = level.getBlockgrid();
 
-        for (int x = 0; x < grid.length; x++)
-        {
-            for (int y = 0; y < grid[x].length; y++)
-            {
-                if (grid[x][y] != null)
-                {
-                    grid[x][y].rebuildSprite();
+        for (Block[] grid1 : grid) {
+            for (Block grid11 : grid1) {
+                if (grid11 != null) {
+                    grid11.rebuildSprite();
                 }
             }
         }
@@ -75,10 +78,7 @@ public class LevelEditor {
             System.out.println("Level sauvegardé : " + path);
         }
 
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        catch (IOException e){}
     }
 
     /**
@@ -100,9 +100,10 @@ public class LevelEditor {
             System.out.println("Level chargé : " + path);
         }
         
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        catch (IOException e){}
+    }
+
+    public void setSelectedPresetBlock(Block selectedPresetBlock) {
+        this.selectedPresetBlock = selectedPresetBlock;
     }
 }

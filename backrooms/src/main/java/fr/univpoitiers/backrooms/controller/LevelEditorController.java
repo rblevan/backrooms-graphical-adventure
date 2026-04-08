@@ -2,7 +2,6 @@ package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.enumeration.BlockType;
 import fr.univpoitiers.backrooms.model.levelEditor.Block;
-import fr.univpoitiers.backrooms.model.levelEditor.Level;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import fr.univpoitiers.backrooms.view.LevelEditorView;
 import javafx.stage.Stage;
