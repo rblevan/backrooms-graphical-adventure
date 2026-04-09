@@ -1,5 +1,7 @@
 package fr.univpoitiers.backrooms.controller;
 
+import java.util.Objects;
+
 import fr.univpoitiers.backrooms.model.WorldModel;
 import fr.univpoitiers.backrooms.model.entity.Hero;
 import fr.univpoitiers.backrooms.model.item.Backpack;
@@ -9,8 +11,6 @@ import fr.univpoitiers.backrooms.model.world.WorldBuilder;
 import fr.univpoitiers.backrooms.view.WorldView;
 import javafx.scene.image.Image;
 import mvc.Controller;
-
-import java.util.Objects;
 
 public class WorldController extends Controller {
 
@@ -50,7 +50,7 @@ public class WorldController extends Controller {
 
         // 4. Chargement de l'image (Ressource pour la Vue)
         // Note : On charge l'image ici pour l'associer au modèle Hero
-        String pathImage = Objects.requireNonNull(getClass().getResource("/images/downHero.png")).toExternalForm();
+        String pathImage = Objects.requireNonNull(getClass().getResource("/images/hero/downHero.png")).toExternalForm();
         Image imageHero = new Image(pathImage);
 
         // 5. Position de départ (Modèle)

@@ -14,7 +14,8 @@ public class LevelEditor {
     // [ATTRIBUTES]
     private Level level = new Level();
     private Block selectedPresetBlock = new Block();
-    private static final String SAVE_DIR = "../../../../ressources/levels/";
+    private static final String SAVE_DIR = "../../../../ressources/levels/custom";
+    private static final String LOAD_DIR_OG = "../../../../ressources/levels/originals";
 
     // [METHODS]
     
@@ -56,9 +57,9 @@ public class LevelEditor {
      * @param filename      The name wanted for the file
      * @return              Absolute path to write / read level.json file   
      */
-    private Path buildPath(String filename)
+    private Path buildPath(String filename, String dir)
     {
-        return Path.of(SAVE_DIR, filename + ".json").toAbsolutePath();
+        return Path.of(dir, filename + ".json").toAbsolutePath();
     }
 
     /**
@@ -66,11 +67,11 @@ public class LevelEditor {
      *
      * @param filename  The name you want to save your level as
      */
-    public void saveLevel(String filename)
+    public void saveLevel(String filename, String dir)
     {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        Path path = buildPath(filename);
+        Path path = buildPath(filename, dir);
 
         try (BufferedWriter writer = Files.newBufferedWriter(path))
         {
@@ -86,10 +87,10 @@ public class LevelEditor {
      *
      * @param filename  The name you want to save your level as
      */
-    public void loadLevel(String filename)
+    public void loadLevel(String filename, String dir)
     {
         Gson gson = new Gson();
-        Path path = buildPath(filename);
+        Path path = buildPath(filename, dir);
 
         try (BufferedReader reader = Files.newBufferedReader(path))
         {
