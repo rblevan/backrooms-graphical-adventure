@@ -10,8 +10,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import mvc.View;
 
-import java.util.Objects;
-
 public class MenuView extends BorderPane implements View {
     private final VBox affichagePrincipal;
     private final HBox buttonContainerCenter;
@@ -26,7 +24,7 @@ public class MenuView extends BorderPane implements View {
         buttonContainerBottom = new HBox(15);
         buttonContainerBottom.setAlignment(Pos.BOTTOM_RIGHT);
 
-        buttonContainerCenter = new HBox(150);
+        buttonContainerCenter = new HBox(100);
         buttonContainerCenter.setAlignment(Pos.BOTTOM_CENTER);
 
         // On ajoute la VBox au StackPane (elle sera donc au-dessus de la MediaView)
@@ -55,7 +53,7 @@ public class MenuView extends BorderPane implements View {
 
             // 1. Charger la vidéo
             Media media = new Media(resource.toExternalForm());
-            MediaPlayer mediaPlayer = new MediaPlayer(media);
+            this.mediaPlayer = new MediaPlayer(media);
             MediaView mediaView = new MediaView(mediaPlayer);
 
             // 2. Paramétrer
@@ -77,7 +75,11 @@ public class MenuView extends BorderPane implements View {
         }
     }
 
-
+    public void stopVideo() {
+        if (mediaPlayer != null) {
+        mediaPlayer.pause();
+    }
+    }
 
     public HBox getButtonContainerCenter() {
         return buttonContainerCenter;

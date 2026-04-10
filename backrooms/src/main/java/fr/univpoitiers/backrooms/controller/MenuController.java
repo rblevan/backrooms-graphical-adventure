@@ -72,6 +72,8 @@ public class MenuController extends Controller {
         this.subControllers.add(quitController);
         this.subControllers.add(buttonTextGame);
         this.subControllers.add(buttonWorldGame);
+        this.subControllers.add(buttonLevelEditor);
+        this.subControllers.add(buttonCustomLevel);
 
 
         // --- 3. AJOUT DES VUES DANS LA VUE PRINCIPALE ---
@@ -89,7 +91,7 @@ public class MenuController extends Controller {
     public void switchToGameText(){
         Node currentView = (Node) this.getView();
 
-        Stage stage =  (Stage) currentView.getScene().getWindow();
+        Stage stage = (Stage) currentView.getScene().getWindow();
 
         TextController textController = TextController.create();
         this.subControllers.add(textController);
@@ -106,13 +108,15 @@ public class MenuController extends Controller {
         this.subControllers.add(worldController);
         worldController.startWorldGame();
         stage.getScene().setRoot((Parent) worldController.getView());
-
     }
 
     public void switchToLevelEditor(){
         Node currentView = (Node) this.getView();
 
         Stage stage = (Stage) currentView.getScene().getWindow();
+
+        MenuView menuView = (MenuView) this.getView();
+        menuView.stopVideo();
 
         LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
         levelEditorController.createLevel();
