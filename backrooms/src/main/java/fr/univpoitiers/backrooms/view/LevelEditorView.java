@@ -36,9 +36,10 @@ public class LevelEditorView implements View {
         int sizeY = editorModel.getLevel().getSizeY();
         this.visualGrid = new Button[sizeX][sizeY];
 
-        int paletteGridRows = 4;
-        int paletteGridColumns = 11;
-        this.paletteBlocksGrid = new Button[paletteGridRows][paletteGridColumns];
+        // En comptant les blocks du level1 et level2, on a 44 blocks donc 4 * 11, de manière très pratique
+        int paletteGridColumns = 4;
+        int paletteGridRows = 12;
+        this.paletteBlocksGrid = new Button[paletteGridColumns][paletteGridRows];
 
         buildUI();
     }
@@ -93,17 +94,18 @@ public class LevelEditorView implements View {
 
         // 2.3 Grille de preset blocks pour level building
         GridPane paletteGrid = new GridPane();
+        // En comptant les blocks du level1 et level2, on a 48 blocks donc 4 * 12, de manière très pratique
         int paletteGridRows = 4;
-        int paletteGridColumns = 11;
+        int paletteGridColumns = 12;
         for (int x = 0; x < paletteGridRows; x++) {
             for (int y = 0; y < paletteGridColumns; y++) {
                 ImageView buttonImage = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
                 buttonImage.setPreserveRatio(false);
 
                 Button button = new Button(null, buttonImage);
-                button.setMinSize(50, 50);
-                button.setPrefSize(50, 50);
-                button.setMaxSize(50, 50);
+                button.setMinSize(40, 40);
+                button.setPrefSize(40, 40);
+                button.setMaxSize(40, 40);
 
                 buttonImage.fitWidthProperty().bind(button.widthProperty().multiply(0.9));
                 buttonImage.fitHeightProperty().bind(button.heightProperty().multiply(0.9));
