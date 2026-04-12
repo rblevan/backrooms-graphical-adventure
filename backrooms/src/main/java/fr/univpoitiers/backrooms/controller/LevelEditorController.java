@@ -1,7 +1,6 @@
 package fr.univpoitiers.backrooms.controller;
 
 import fr.univpoitiers.backrooms.model.enumeration.BlockType;
-import fr.univpoitiers.backrooms.model.levelEditor.Block;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import fr.univpoitiers.backrooms.view.LevelEditorView;
 import javafx.stage.Stage;
@@ -35,7 +34,7 @@ public class LevelEditorController extends Controller {
         //view.updateGrid();
     }
 
-    public void changeBlockType(int x, int y) {
+    /*public void changeBlockType(int x, int y) {
         Block targetBlock = editorModel.getLevel().getBlock(x, y);
 
         BlockType currentBrushType = editorModel.getSelectedPresetBlock().getType();
@@ -43,7 +42,14 @@ public class LevelEditorController extends Controller {
         targetBlock.updateBlock(1, currentBrushType, null, 1, null);
 
         editorView.updateGridCell(x, y, currentBrushType);
+    }*/
+
+    public void saveLevel(String levelname) {
+        editorModel.saveLevel(levelname, LevelEditor.SAVE_DIR);
     }
 
+    public void backMenu() {
+        // Insérer code retour menu ici
+    }
 
 }

@@ -1,25 +1,31 @@
 package fr.univpoitiers.backrooms.view;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import fr.univpoitiers.backrooms.controller.LevelEditorController;
-import fr.univpoitiers.backrooms.model.enumeration.BlockType;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import mvc.View;
 
 public class LevelEditorView implements View {
-    private Stage stage;
-    private LevelEditorController controller;
-    private LevelEditor editorModel;
+    private final Stage stage;
+    private final LevelEditorController controller;
+    private final LevelEditor editorModel;
 
-    private Rectangle[][] visualGrid;
+    private final Button[][] visualGrid;
+    private final Button[][] paletteBlocksGrid;
 
     public LevelEditorView(Stage stage, LevelEditorController controller, LevelEditor editorModel) {
         this.stage = stage;
@@ -28,7 +34,11 @@ public class LevelEditorView implements View {
 
         int sizeX = editorModel.getLevel().getSizeX();
         int sizeY = editorModel.getLevel().getSizeY();
-        this.visualGrid = new Rectangle[sizeX][sizeY];
+        this.visualGrid = new Button[sizeX][sizeY];
+
+        int paletteGridRows = 4;
+        int paletteGridColumns = 11;
+        this.paletteBlocksGrid = new Button[paletteGridRows][paletteGridColumns];
 
         buildUI();
     }
@@ -43,19 +53,26 @@ public class LevelEditorView implements View {
 
         for (int x = 0; x < sizeX; x++) {
             for (int y = 0; y < sizeY; y++) {
-                Rectangle rect = new Rectangle(20, 20);
-                rect.setFill(Color.LIGHTGRAY);
-                rect.setStroke(Color.BLACK);
+                ImageView buttonImage = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
+                buttonImage.setPreserveRatio(false);
 
-                visualGrid[x][y] = rect;
+                Button button = new Button(null, buttonImage);
+                button.setMinSize(20, 20);
+                button.setPrefSize(20, 20);
+                button.setMaxSize(20, 20);
+
+                buttonImage.fitWidthProperty().bind(button.widthProperty().multiply(0.9));
+                buttonImage.fitHeightProperty().bind(button.heightProperty().multiply(0.9));
+
+                visualGrid[x][y] = button;
 
                 int finalX = x;
                 int finalY = y;
-                rect.setOnMouseClicked(e -> {
+                /*button.setOnMouseClicked(e -> {
                     controller.changeBlockType(finalX, finalY);
-                });
+                });*/
 
-                grid.add(rect, x, y);
+                grid.add(button, x, y);
             }
         }
         root.setCenter(grid);
@@ -65,16 +82,57 @@ public class LevelEditorView implements View {
         palette.setPadding(new Insets(15));
         palette.setStyle("-fx-background-color: #f0f0f0; -fx-border-color: #cccccc; -fx-border-width: 0 0 0 1;");
 
-        Button btnVoid = new Button("Gomme (VOID)");
-        btnVoid.setOnAction(e -> controller.selectBrush(BlockType.VOID));
+        // 2.1 Level Name Label and TextField
+        Label levelNameLabel = new Label("Level name : ");
+        TextField levelNameTextField = new TextField();
+        levelNameTextField.setText(getCurrentDateTime());
+        levelNameTextField.setEditable(true);
+        levelNameTextField.requestFocus();
+        HBox levelNameHBox = new HBox(10);
+        levelNameHBox.getChildren().addAll(levelNameLabel, levelNameTextField);
 
-        Button btnGround = new Button("Sol (GROUND)");
-        btnGround.setOnAction(e -> controller.selectBrush(BlockType.GROUND));
+        // 2.3 Grille de preset blocks pour level building
+        GridPane paletteGrid = new GridPane();
+        int paletteGridRows = 4;
+        int paletteGridColumns = 11;
+        for (int x = 0; x < paletteGridRows; x++) {
+            for (int y = 0; y < paletteGridColumns; y++) {
+                ImageView buttonImage = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
+                buttonImage.setPreserveRatio(false);
 
-        Button btnWall = new Button("Mur (WALL)");
-        btnWall.setOnAction(e -> controller.selectBrush(BlockType.WALL));
+                Button button = new Button(null, buttonImage);
+                button.setMinSize(50, 50);
+                button.setPrefSize(50, 50);
+                button.setMaxSize(50, 50);
 
-        palette.getChildren().addAll(btnVoid, btnGround, btnWall);
+                buttonImage.fitWidthProperty().bind(button.widthProperty().multiply(0.9));
+                buttonImage.fitHeightProperty().bind(button.heightProperty().multiply(0.9));
+
+                paletteBlocksGrid[x][y] = button;
+
+                int finalX = x;
+                int finalY = y;
+                /*button.setOnMouseClicked(e -> {
+                    controller.changeBlockType(finalX, finalY);
+                });*/
+
+                paletteGrid.add(button, x, y);
+            }
+        }
+
+        // 2.3 Bouton Save Level
+        Button btnSaveLevel = new Button("Save Level");
+        btnSaveLevel.setOnAction(e -> {
+            String levelName = levelNameTextField.getText();
+            controller.saveLevel(levelName);
+        });
+
+        // 2.4 Bouton Retour Main Menu 
+        Button btnBack2MainMenu = new Button("Main Menu");
+        btnBack2MainMenu.setOnAction(e -> controller.backMenu());
+
+        // Intégration des différents éléments dans la palette puis intégration dans root
+        palette.getChildren().addAll(levelNameHBox, paletteGrid, btnSaveLevel, btnBack2MainMenu);
         root.setRight(palette);
 
         // --- 3. CREATION SCENE ---
@@ -83,8 +141,8 @@ public class LevelEditorView implements View {
         stage.setScene(scene);
     }
 
-    public void updateGridCell(int x, int y, BlockType newType) {
-        Rectangle rect = visualGrid[x][y];
+    /*public void updateGridCell(int x, int y, BlockType newType) {
+        Rtectangle rec = visualGrid[x][y];
         switch (newType) {
             case WALL:
                 rect.setFill(Color.DARKSLATEGRAY);
@@ -97,6 +155,12 @@ public class LevelEditorView implements View {
                 rect.setFill(Color.LIGHTGRAY);
                 break;
         }
+    }*/
+
+    private String getCurrentDateTime() {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        return now.format(formatter);
     }
 
     public void show() {
