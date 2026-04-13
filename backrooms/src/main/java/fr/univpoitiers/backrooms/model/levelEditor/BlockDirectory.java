@@ -120,9 +120,9 @@ public class BlockDirectory {
 
         this.directory[17] = LV1_VOID;
 
-        this.directory[18] = LV2_GROUND;
+        this.directory[18] = LV2_VOID;
 
-        this.directory[19] = LV2_VOID;
+        this.directory[19] = LV2_GROUND;
 
         this.directory[20] = LV2_EXIT_1;
         this.directory[21] = LV2_EXIT_2;
