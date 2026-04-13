@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import fr.univpoitiers.backrooms.controller.LevelEditorController;
+import fr.univpoitiers.backrooms.model.levelEditor.BlockDirectory;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -23,6 +24,7 @@ public class LevelEditorView implements View {
     private final Stage stage;
     private final LevelEditorController controller;
     private final LevelEditor editorModel;
+    private final BlockDirectory blockDirectory;
 
     private final Button[][] visualGrid;
     private final Button[][] paletteBlocksGrid;
@@ -31,6 +33,8 @@ public class LevelEditorView implements View {
         this.stage = stage;
         this.controller = controller;
         this.editorModel = editorModel;
+        this.blockDirectory = new BlockDirectory();
+        this.blockDirectory.init();
 
         int sizeX = editorModel.getLevel().getSizeX();
         int sizeY = editorModel.getLevel().getSizeY();
@@ -99,7 +103,7 @@ public class LevelEditorView implements View {
         int paletteGridColumns = 12;
         for (int x = 0; x < paletteGridRows; x++) {
             for (int y = 0; y < paletteGridColumns; y++) {
-                ImageView buttonImage = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
+                ImageView buttonImage = blockDirectory.getBlock(y*4+x).getSprite();
                 buttonImage.setPreserveRatio(false);
 
                 Button button = new Button(null, buttonImage);

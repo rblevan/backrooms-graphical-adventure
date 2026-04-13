@@ -28,13 +28,13 @@ public class Block {
         this.sprite = new ImageView(new Image(getClass().getResource("/images/blocks/void.png").toExternalForm()));
     }
 
-    public Block(int l, BlockType t, BlockSubtype stype, int o, ImageView s)
+    public Block(int level, BlockType type, BlockSubtype subtype, int orientation, ImageView sprite)
     {
-        this.level = l;
-        this.type = t;
-        this.subtype = stype;
-        this.orientation = o;
-        this.sprite = s;
+        this.level = level;
+        this.type = type;
+        this.subtype = subtype;
+        this.orientation = orientation;
+        this.sprite = sprite;
     }
 
     // [METHODS]
