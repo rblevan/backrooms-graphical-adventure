@@ -79,9 +79,27 @@ public class Level {
         // First, we check if i and j have valid values
         if((i < 0) || (i >= SIZE_X) || (j < 0) || (j >= SIZE_Y))
         {
-            throw new IndexOutOfBoundsException("Block indices out of bounds.");
+            throw new IndexOutOfBoundsException("Block index out of bounds.");
         }
 
         return this.blockgrid[i][j];
+    }
+
+    /**
+     * Sets a desired Block of the blockgrid
+     *
+     * @param i             X index of the block in the blockgrid
+     * @param j             Y index of the block in the blockgrid
+     * @param sourceBlock   The source Block that will be set into the Level's Block[][] blockgrid[i][j] 
+     */
+    public void setBlock(int i, int j, Block sourceBlock)
+    {
+        // First, we check if i and j have valid values
+        if((i < 0) || (i >= SIZE_X) || (j < 0) || (j >= SIZE_Y))
+        {
+            throw new IndexOutOfBoundsException("Block index out of bounds.");
+        }
+
+        this.blockgrid[i][j] = sourceBlock;
     }
 }

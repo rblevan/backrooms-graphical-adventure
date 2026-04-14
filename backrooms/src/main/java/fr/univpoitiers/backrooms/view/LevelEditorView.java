@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import fr.univpoitiers.backrooms.controller.LevelEditorController;
+import fr.univpoitiers.backrooms.model.levelEditor.Block;
 import fr.univpoitiers.backrooms.model.levelEditor.BlockDirectory;
+import fr.univpoitiers.backrooms.model.levelEditor.Level;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -73,9 +75,17 @@ public class LevelEditorView implements View {
 
                 int finalX = x;
                 int finalY = y;
-                /*button.setOnMouseClicked(e -> {
-                    controller.changeBlockType(finalX, finalY);
-                });*/
+                button.setOnAction(e -> {
+                    Block selectedBlock = editorModel.getSelectedPresetBlock();
+                    Level level = editorModel.getLevel();
+                    controller.editLevelBlock(level, finalX, finalY, selectedBlock);
+                        
+                    ImageView newButtonImage = selectedBlock.getSprite();
+                    newButtonImage.setPreserveRatio(false);
+                    newButtonImage.fitWidthProperty().bind(button.widthProperty().multiply(0.9));
+                    newButtonImage.fitHeightProperty().bind(button.heightProperty().multiply(0.9));
+                    button.setGraphic(newButtonImage);
+                });
 
                 grid.add(button, x, y);
             }
@@ -103,7 +113,7 @@ public class LevelEditorView implements View {
         int paletteGridColumns = 12;
         for (int x = 0; x < paletteGridRows; x++) {
             for (int y = 0; y < paletteGridColumns; y++) {
-                ImageView buttonImage = blockDirectory.getBlock(y*4+x).getSprite();
+                ImageView buttonImage = blockDirectory.getBlock(y * 4 + x).getSprite();
                 buttonImage.setPreserveRatio(false);
 
                 Button button = new Button(null, buttonImage);
@@ -118,9 +128,10 @@ public class LevelEditorView implements View {
 
                 int finalX = x;
                 int finalY = y;
-                /*button.setOnMouseClicked(e -> {
-                    controller.changeBlockType(finalX, finalY);
-                });*/
+                button.setOnAction(e -> {
+                    Block newSelectedBlock = blockDirectory.getBlock(finalY * 4 + finalX);
+                    controller.updateSelection(newSelectedBlock);
+                });
 
                 paletteGrid.add(button, x, y);
             }
@@ -146,22 +157,6 @@ public class LevelEditorView implements View {
         stage.setTitle("Backrooms - Level Editor");
         stage.setScene(scene);
     }
-
-    /*public void updateGridCell(int x, int y, BlockType newType) {
-        Rtectangle rec = visualGrid[x][y];
-        switch (newType) {
-            case WALL:
-                rect.setFill(Color.DARKSLATEGRAY);
-                break;
-            case GROUND:
-                rect.setFill(Color.BEIGE);
-                break;
-            case VOID:
-            default:
-                rect.setFill(Color.LIGHTGRAY);
-                break;
-        }
-    }*/
 
     private String getCurrentDateTime() {
         LocalDateTime now = LocalDateTime.now();

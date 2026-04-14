@@ -1,6 +1,7 @@
 package fr.univpoitiers.backrooms.controller;
 
-import fr.univpoitiers.backrooms.model.enumeration.BlockType;
+import fr.univpoitiers.backrooms.model.levelEditor.Block;
+import fr.univpoitiers.backrooms.model.levelEditor.Level;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import fr.univpoitiers.backrooms.view.LevelEditorView;
 import javafx.stage.Stage;
@@ -23,26 +24,23 @@ public class LevelEditorController extends Controller {
         this.editorModel = new LevelEditor();
         this.editorView = new LevelEditorView(this.stage, this, this.editorModel);
         this.editorView.show();
-
     }
 
-    public void selectBrush(BlockType type) {
-        // à changer
-        this.editorModel.getSelectedPresetBlock().updateBlock(
-                1, type, null, 1, null
-        );
-        //view.updateGrid();
+    public View getViewParent()
+    {
+        return editorView;
     }
 
-    /*public void changeBlockType(int x, int y) {
-        Block targetBlock = editorModel.getLevel().getBlock(x, y);
+    public void updateSelection(Block SelectedBlock) {
+        editorModel.updateSelectedPresetBlock(SelectedBlock);
+    }
 
-        BlockType currentBrushType = editorModel.getSelectedPresetBlock().getType();
+    public void editLevelBlock(Level level, int destinationBlockIndexX, int destinationBlockIndexY, Block sourceBlock) {
+        //Updates the wanted block in the level's Block[][] blockgrid
+        level.setBlock(destinationBlockIndexY, destinationBlockIndexY, sourceBlock);
 
-        targetBlock.updateBlock(1, currentBrushType, null, 1, null);
-
-        editorView.updateGridCell(x, y, currentBrushType);
-    }*/
+        //Updates the editorView Button grid
+    }
 
     public void saveLevel(String levelname) {
         editorModel.saveLevel(levelname, LevelEditor.SAVE_DIR);
