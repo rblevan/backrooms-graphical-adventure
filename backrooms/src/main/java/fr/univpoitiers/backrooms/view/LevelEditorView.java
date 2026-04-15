@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -85,6 +86,7 @@ public class LevelEditorView implements View {
                     newButtonImage.fitWidthProperty().bind(button.widthProperty().multiply(0.9));
                     newButtonImage.fitHeightProperty().bind(button.heightProperty().multiply(0.9));
                     button.setGraphic(newButtonImage);
+                    button.requestLayout(); 
                 });
 
                 grid.add(button, x, y);
@@ -101,10 +103,19 @@ public class LevelEditorView implements View {
         Label levelNameLabel = new Label("Level name : ");
         TextField levelNameTextField = new TextField();
         levelNameTextField.setText(getCurrentDateTime());
-        levelNameTextField.setEditable(true);
-        levelNameTextField.requestFocus();
         HBox levelNameHBox = new HBox(10);
         levelNameHBox.getChildren().addAll(levelNameLabel, levelNameTextField);
+
+        // 2.2 Spawn
+        Label spawnLabel = new Label("Spawn : ");
+        Label spawnXLabel = new Label("X");
+        Spinner spawnXspinner = new Spinner​(0, 29, 0);
+        spawnXspinner.setMaxWidth(63);
+        Label spawnYLabel = new Label("Y");
+        Spinner spawnYspinner = new Spinner​(0, 29, 0);
+        spawnYspinner.setMaxWidth(63);
+        HBox spawnHbox = new HBox(10);
+        spawnHbox.getChildren().addAll(spawnLabel, spawnXLabel, spawnXspinner, spawnYLabel, spawnYspinner);
 
         // 2.3 Grille de preset blocks pour level building
         GridPane paletteGrid = new GridPane();
@@ -140,6 +151,9 @@ public class LevelEditorView implements View {
         // 2.3 Bouton Save Level
         Button btnSaveLevel = new Button("Save Level");
         btnSaveLevel.setOnAction(e -> {
+            editorModel.getLevel().setSpawnX((int) spawnXspinner.getValue());
+            editorModel.getLevel().setSpawnY((int) spawnYspinner.getValue());
+
             String levelName = levelNameTextField.getText();
             controller.saveLevel(levelName);
         });
@@ -149,7 +163,7 @@ public class LevelEditorView implements View {
         btnBack2MainMenu.setOnAction(e -> controller.backMenu());
 
         // Intégration des différents éléments dans la palette puis intégration dans root
-        palette.getChildren().addAll(levelNameHBox, paletteGrid, btnSaveLevel, btnBack2MainMenu);
+        palette.getChildren().addAll(levelNameHBox, spawnHbox, paletteGrid, btnSaveLevel, btnBack2MainMenu);
         root.setRight(palette);
 
         // --- 3. CREATION SCENE ---

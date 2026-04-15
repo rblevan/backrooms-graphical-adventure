@@ -36,10 +36,7 @@ public class LevelEditorController extends Controller {
     }
 
     public void editLevelBlock(Level level, int destinationBlockIndexX, int destinationBlockIndexY, Block sourceBlock) {
-        //Updates the wanted block in the level's Block[][] blockgrid
         level.setBlock(destinationBlockIndexY, destinationBlockIndexY, sourceBlock);
-
-        //Updates the editorView Button grid
     }
 
     public void saveLevel(String levelname) {

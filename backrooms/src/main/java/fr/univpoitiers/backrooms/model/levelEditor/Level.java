@@ -68,6 +68,30 @@ public class Level {
         return this.spawnY;
     }
 
+    //* Sets the Level's spawnX */
+    public void setSpawnX(int n)
+    {
+        // First, we check if i and j have valid values
+        if((n < 0) || (n >= SIZE_X))
+        {
+            throw new IndexOutOfBoundsException("Block index out of bounds.");
+        }
+
+        this.spawnX = n;
+    }
+
+    //* Sets the Level's spawnY */
+    public void setSpawnY(int n)
+    {
+        // First, we check if i and j have valid values
+        if((n < 0) || (n >= SIZE_Y))
+        {
+            throw new IndexOutOfBoundsException("Block index out of bounds.");
+        }
+
+        this.spawnY = n;
+    }
+
     /**
      * Gets a desired Block of the blockgrid
      *

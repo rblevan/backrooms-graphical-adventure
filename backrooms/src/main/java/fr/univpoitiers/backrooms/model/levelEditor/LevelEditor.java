@@ -14,8 +14,8 @@ public class LevelEditor {
     // [ATTRIBUTES]
     private Level level = new Level();
     private Block selectedPresetBlock = new Block();
-    public static final String SAVE_DIR = "../../../../../ressources/levels/custom";
-    public static final String LOAD_DIR_OG = "../../../../../ressources/levels/originals";
+    public static final String SAVE_DIR = LevelEditor.class.getResource("/levels/custom/").toExternalForm();
+    public static final String LOAD_DIR_OG = LevelEditor.class.getResource("/levels/custom/").toExternalForm();
 
     // [METHODS]
     

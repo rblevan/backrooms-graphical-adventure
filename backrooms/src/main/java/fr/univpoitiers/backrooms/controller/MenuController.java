@@ -89,7 +89,7 @@ public class MenuController extends Controller {
         menuView.addComponentBottom((Node) quitController.getView());
     }
 
-    public void switchToGameText(){
+    public void switchToGameText() {
         Node currentView = (Node) this.getView();
 
         Stage stage = (Stage) currentView.getScene().getWindow();
@@ -100,7 +100,7 @@ public class MenuController extends Controller {
         stage.getScene().setRoot((Parent) textController.getView());
     }
 
-    public void switchToGameWorld(){
+    public void switchToGameWorld() {
         Node currentView = (Node) this.getView();
 
         Stage stage = (Stage) currentView.getScene().getWindow();
@@ -111,34 +111,20 @@ public class MenuController extends Controller {
         stage.getScene().setRoot((Parent) worldController.getView());
     }
 
-    /*public void switchToLevelEditor(){
-        Node currentView = (Node) this.getView();
-
-        Stage stage = (Stage) currentView.getScene().getWindow();
-
+    public void switchToLevelEditor() {
         MenuView menuView = (MenuView) this.getView();
         menuView.stopVideo();
+
+        Node currentView = (Node) this.getView();
+        Stage stage = (Stage) currentView.getScene().getWindow();
 
         LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
         levelEditorController.createLevel();
         this.subControllers.add(levelEditorController);
-        stage.getScene().setRoot((Parent) levelEditorController.getView());
-    }*/
 
-    public void switchToLevelEditor() {
-    MenuView menuView = (MenuView) this.getView();
-    menuView.stopVideo();
+        Scene levelEditorScene = new Scene((Parent) levelEditorController.getView());
 
-    Node currentView = (Node) this.getView();
-    Stage stage = (Stage) currentView.getScene().getWindow();
-
-    LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
-    levelEditorController.createLevel();
-    this.subControllers.add(levelEditorController);
-
-    Scene levelEditorScene = new Scene((Parent) levelEditorController.getView());
-
-    stage.setScene(levelEditorScene);
+        stage.setScene(levelEditorScene);
     }
 
     public void switchToCustomLevel(){
