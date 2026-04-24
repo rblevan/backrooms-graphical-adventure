@@ -72,7 +72,8 @@ public class Block {
     //* Gets the block's Sprite ImageView */
     public ImageView getSprite()
     {
-        return this.sprite;
+        //return this.sprite;
+        return new ImageView(this.sprite.getImage());
     }
 
     /**

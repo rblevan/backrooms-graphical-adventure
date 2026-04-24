@@ -26,9 +26,9 @@ public class LevelEditorController extends Controller {
         this.editorView.show();
     }
 
-    public View getViewParent()
-    {
-        return editorView;
+    @Override
+    public View getView() {
+        return this.editorView;
     }
 
     public void updateSelection(Block SelectedBlock) {

@@ -5,7 +5,6 @@ import fr.univpoitiers.backrooms.view.MenuView;
 import fr.univpoitiers.backrooms.view.MyImageView;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -115,16 +114,11 @@ public class MenuController extends Controller {
         MenuView menuView = (MenuView) this.getView();
         menuView.stopVideo();
 
-        Node currentView = (Node) this.getView();
-        Stage stage = (Stage) currentView.getScene().getWindow();
+        Stage stage = (Stage) ((Node) menuView).getScene().getWindow();
 
         LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
         levelEditorController.createLevel();
         this.subControllers.add(levelEditorController);
-
-        Scene levelEditorScene = new Scene((Parent) levelEditorController.getView());
-
-        stage.setScene(levelEditorScene);
     }
 
     public void switchToCustomLevel(){
