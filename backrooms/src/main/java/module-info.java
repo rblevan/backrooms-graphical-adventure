@@ -7,6 +7,7 @@ module fr.univpoitiers.backrooms {
 
     requires com.google.gson;
     opens fr.univpoitiers.backrooms.model.levelEditor to com.google.gson;
+    opens fr.univpoitiers.backrooms.model.enumeration to com.google.gson;
 
     exports fr.univpoitiers.backrooms.main;
     opens fr.univpoitiers.backrooms.main to javafx.graphics;

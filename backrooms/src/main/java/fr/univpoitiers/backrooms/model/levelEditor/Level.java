@@ -1,13 +1,16 @@
 package fr.univpoitiers.backrooms.model.levelEditor;
 
+import com.google.gson.annotations.Expose;
+
 public class Level {
     
     // ATTRIBUTES
-    private Block[][] blockgrid;
-    private static final int SIZE_X = 30;   // Default level size is 30x30 blocks
-    private static final int SIZE_Y = 30;   // Default level size is 30x30 blocks
-    private int spawnX;
-    private int spawnY;
+    @Expose private Block[][] blockgrid;
+    @Expose private static final int SIZE_X = 30;   // Default level size is 30x30 blocks
+    @Expose private static final int SIZE_Y = 30;   // Default level size is 30x30 blocks
+    @Expose private int spawnX;
+    @Expose private int spawnY;
+    @Expose private final String nextLevel;         // Null by default and for custom levels, modified for the original levels
 
     // [CONSTRUCTOR]
     public Level ()
@@ -24,6 +27,7 @@ public class Level {
 
         this.spawnX = 0;
         this.spawnY = 0;
+        this.nextLevel = null;
     }
 
     // [METHODS]
@@ -66,6 +70,11 @@ public class Level {
     public int getSpawnY()
     {
         return this.spawnY;
+    }
+
+    public String getNextLevel()
+    {
+        return this.nextLevel;
     }
 
     //* Sets the Level's spawnX */

@@ -40,7 +40,7 @@ public class LevelEditorController extends Controller {
     }
 
     public void saveLevel(String levelname) {
-        editorModel.saveLevel(levelname, LevelEditor.SAVE_DIR);
+        editorModel.saveLevel(levelname, LevelEditor.CUSTOM_DIR);
     }
 
     public void backMenu() {

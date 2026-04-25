@@ -1,6 +1,7 @@
 package fr.univpoitiers.backrooms.model.levelEditor;
 
-// [IMPORTS]
+import com.google.gson.annotations.Expose;
+
 import fr.univpoitiers.backrooms.model.enumeration.BlockSubtype;
 import fr.univpoitiers.backrooms.model.enumeration.BlockType;
 import fr.univpoitiers.backrooms.model.item.Items;
@@ -10,12 +11,12 @@ import javafx.scene.image.ImageView;
 public class Block {
 
     // ATTRIBUTES
-    private int level;                      // Can be 1 or 2 depending on the level skin we want for the block
-    private BlockType type;                 // Block Type, see Type enum
-    private BlockSubtype subtype;           // Block Subtype, see Subtype enum
-    private Items containedObject;          // Can be Food, Weapon, Spell...
-    private int orientation;                // Can be 1, 2, 3 or 4
-    private transient ImageView sprite;     // Changes following the other attributes of the block
+    @Expose private int level;                      // Can be 1 or 2 depending on the level skin we want for the block
+    @Expose private BlockType type;                 // Block Type, see Type enum
+    @Expose private BlockSubtype subtype;           // Block Subtype, see Subtype enum
+    @Expose private Items containedObject;          // Can be Food, Weapon, Spell...
+    @Expose private int orientation;                // Can be 1, 2, 3 or 4
+    @Expose private transient ImageView sprite;     // Changes following the other attributes of the block
 
     // [CONSTRUCTORS]
     public Block()
