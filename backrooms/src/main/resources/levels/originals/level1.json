@@ -1,0 +1,5467 @@
+{
+  "blockgrid": [
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "OUTERCORNER",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "INNERCORNER",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "OUTERCORNER",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "GROUND",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "OUTERCORNER",
+        "orientation": 3
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "NONE",
+        "orientation": 2
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "WALL",
+        "subtype": "OUTERCORNER",
+        "orientation": 3
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ],
+    [
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      },
+      {
+        "level": 1,
+        "type": "VOID",
+        "subtype": "NONE",
+        "orientation": 1
+      }
+    ]
+  ],
+  "spawnX": 18,
+  "spawnY": 10,
+  "nextLevel": "level2"
+}

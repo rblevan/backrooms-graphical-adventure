@@ -1,4 +1,0 @@
-Ce .txt est juste pour que le Git marque le dossier
-Il sera supprimé plus tard.
-
-Ce dossier (ressources/levels/custom) servira à accueillir les niveaux créés (custom).
