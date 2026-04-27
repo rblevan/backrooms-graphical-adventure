@@ -10,6 +10,7 @@ import fr.univpoitiers.backrooms.model.levelEditor.Level;
 import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
@@ -170,12 +171,36 @@ public class LevelEditorView implements View {
         Scene scene = new Scene(root, 900, 700);
         stage.setTitle("Backrooms - Level Editor");
         stage.setScene(scene);
+
+        // --- 4. POPUP D'AIDE ET BIENVENUE ---
+        showHelpDialog();
     }
 
     private String getCurrentDateTime() {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
         return now.format(formatter);
+    }
+
+    private void showHelpDialog() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Level Editor - Welcome & Tutorial");
+        alert.setHeaderText("Welcome to the Level Editor !");
+        alert.setContentText(
+            // FR
+            /*"- Cliquez sur un bloc dans la palette à droite pour le sélectionner.\n" +
+            "- Cliquez sur une case de la grille pour y placer le bloc.\n" +
+            "- Définissez le point de spawn et le nom du niveau.\n" +
+            "- Cliquez sur 'Save Level' pour sauvegarder."*/
+
+            // EN
+            "- Click on a block on the right panel to select it.\n" +
+            "- Click on the grid to transform the blocks.\n" +
+            "- Do not forget to setup spawn point and level name.\n" +
+            "- Click on 'Save Level' to save."
+        );
+
+        alert.showAndWait();
     }
 
     public void show() {
