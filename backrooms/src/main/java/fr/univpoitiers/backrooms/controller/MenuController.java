@@ -119,6 +119,11 @@ public class MenuController extends Controller {
         LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
         levelEditorController.createLevel();
         this.subControllers.add(levelEditorController);
+
+        // Dimenions du stage du LevelEditor + centrer
+        stage.setWidth(900);
+        stage.setHeight(700);
+        stage.centerOnScreen();
     }
 
     public void switchToCustomLevel(){

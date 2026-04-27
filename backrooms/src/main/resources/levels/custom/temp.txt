@@ -1,0 +1,3 @@
+Fichier placeholder.
+Si le dossier est vide il n'est plus reconnu par Java
+Ne pas supprimer, merci.
