@@ -1,5 +1,57 @@
 package fr.univpoitiers.backrooms.controller;
 
-public class LevelEditorController {
-    
+import fr.univpoitiers.backrooms.model.levelEditor.Block;
+import fr.univpoitiers.backrooms.model.levelEditor.Level;
+import fr.univpoitiers.backrooms.model.levelEditor.LevelEditor;
+import fr.univpoitiers.backrooms.view.LevelEditorView;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import mvc.Controller;
+import mvc.Model;
+import mvc.View;
+
+public class LevelEditorController extends Controller {
+
+    private LevelEditor editorModel;
+    private LevelEditorView editorView;
+    private Stage stage;
+    private MenuController menuController;
+
+    public LevelEditorController(Model model, View view, Stage stage) {
+        super(model, view);
+        this.stage = stage;
+    }
+
+    public void createLevel() {
+        this.editorModel = new LevelEditor();
+        this.editorView = new LevelEditorView(this.stage, this, this.editorModel);
+        this.editorView.show();
+        this.menuController = MenuController.create();
+    }
+
+    @Override
+    public View getView() {
+        return this.editorView;
+    }
+
+    public void updateSelection(Block SelectedBlock) {
+        editorModel.updateSelectedPresetBlock(SelectedBlock);
+    }
+
+    public void editLevelBlock(Level level, int destinationBlockIndexX, int destinationBlockIndexY, Block sourceBlock) {
+        level.setBlock(destinationBlockIndexY, destinationBlockIndexY, sourceBlock);
+    }
+
+    public void saveLevel(String levelname) {
+        editorModel.saveLevel(levelname, LevelEditor.CUSTOM_DIR);
+    }
+
+    public void backMenu() {
+        stage.getScene().setRoot((Parent) menuController.getView());
+
+        // Dimensions du stage de MenuView + centrer
+        stage.setWidth(1280);
+        stage.setHeight(720);
+        stage.centerOnScreen();
+    }
 }
