@@ -127,6 +127,7 @@ public class MenuController extends Controller {
         Stage stage = (Stage) ((Node) menuView).getScene().getWindow();
 
         LevelEditorController levelEditorController = new LevelEditorController(model, view, stage);
+        levelEditorController.setMenuController(this);
         levelEditorController.createLevel();
         this.subControllers.add(levelEditorController);
 
@@ -144,5 +145,11 @@ public class MenuController extends Controller {
             - Nouvelle scène World en chargeant le niveau avec LevelEditor.loadLevel("nomdufichier")
             */ 
 
+    }
+    
+    // Method to restart video when returning from another scene
+    public void restartVideo() {
+        MenuModel menuModel = (MenuModel) this.getModel();
+        ((MenuView) this.getView()).setupVideoBackground(menuModel.getVideoPath());
     }
 }

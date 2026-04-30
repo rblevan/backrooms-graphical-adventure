@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import mvc.View;
 
-public class LevelEditorView implements View {
+public class LevelEditorView extends BorderPane implements View {
     private final Stage stage;
     private final LevelEditorController controller;
     private final LevelEditor editorModel;
@@ -53,8 +53,6 @@ public class LevelEditorView implements View {
     }
 
     private void buildUI() {
-        BorderPane root = new BorderPane();
-
         // --- 1. LA GRILLE AU CENTRE ---
         GridPane grid = new GridPane();
         int sizeX = editorModel.getLevel().getSizeX();
@@ -93,7 +91,7 @@ public class LevelEditorView implements View {
                 grid.add(button, x, y);
             }
         }
-        root.setCenter(grid);
+        this.setCenter(grid);
 
         // --- 2. LA PALETTE D'OUTILS À DROITE ---
         VBox palette = new VBox(10);
@@ -165,12 +163,13 @@ public class LevelEditorView implements View {
 
         // Intégration des différents éléments dans la palette puis intégration dans root
         palette.getChildren().addAll(levelNameHBox, spawnHbox, paletteGrid, btnSaveLevel, btnBack2MainMenu);
-        root.setRight(palette);
+        this.setRight(palette);
 
         // --- 3. CREATION SCENE ---
-        Scene scene = new Scene(root, 900, 700);
-        stage.setTitle("Backrooms - Level Editor");
-        stage.setScene(scene);
+        // Scene scene = new Scene(root, 900, 700);
+        // stage.setTitle("Backrooms - Level Editor");
+        // stage.setScene(scene);
+        stage.getScene().setRoot(this);
 
         // --- 4. POPUP D'AIDE ET BIENVENUE ---
         showHelpDialog();

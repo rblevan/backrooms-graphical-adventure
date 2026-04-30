@@ -26,7 +26,13 @@ public class LevelEditorController extends Controller {
         this.editorModel = new LevelEditor();
         this.editorView = new LevelEditorView(this.stage, this, this.editorModel);
         this.editorView.show();
-        this.menuController = MenuController.create();
+        // The creation of MenuController might be starting the video again. We should defer it or use the existing one
+        // this.menuController = MenuController.create();
+    }
+
+    // Add a setter for MenuController so we can reuse the existing one
+    public void setMenuController(MenuController menuController) {
+        this.menuController = menuController;
     }
 
     @Override
@@ -47,6 +53,13 @@ public class LevelEditorController extends Controller {
     }
 
     public void backMenu() {
+        if (menuController == null) {
+            menuController = MenuController.create();
+        } else {
+            // Re-initialize the video if coming back to an existing menu
+            menuController.restartVideo();
+        }
+        
         stage.getScene().setRoot((Parent) menuController.getView());
 
         // Dimensions du stage de MenuView + centrer
