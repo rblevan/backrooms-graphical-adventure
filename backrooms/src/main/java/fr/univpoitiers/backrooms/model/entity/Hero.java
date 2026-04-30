@@ -108,9 +108,10 @@ public class Hero extends Entity {
 
         Optional<String> result = dialog.showAndWait();
 
-        if(result.orElse("Anonymous").trim().isEmpty()){
-            return "Anonymous";
+        if (result.isPresent()) {
+            return result.map(String::trim).filter(s -> !s.isEmpty()).orElse("Anonymous");
+        } else {
+            return null; // Return null if the user cancelled
         }
-        return result.get();
     }
 }

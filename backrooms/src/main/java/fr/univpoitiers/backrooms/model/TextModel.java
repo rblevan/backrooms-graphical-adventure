@@ -18,6 +18,9 @@ public class TextModel implements Model {
     public TextModel() {
         this.startLocation = TextBuilder.buildWorld();
         String playerName = askPlayerName();
+        if (playerName == null) {
+            throw new IllegalArgumentException("User cancelled character creation");
+        }
         Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);
         String playerDesc = "an ordinary person who has lived a quiet, unremarkable life...";
 
@@ -32,7 +35,11 @@ public class TextModel implements Model {
         dialog.setContentText("Enter your name:");
 
         Optional<String> result = dialog.showAndWait();
-        return result.orElse("Anonymous").trim().isEmpty() ? "Anonymous" : result.get();
+        if (result.isPresent()) {
+            return result.map(String::trim).filter(s -> !s.isEmpty()).orElse("Anonymous");
+        } else {
+            return null;
+        }
     }
 
     @Override

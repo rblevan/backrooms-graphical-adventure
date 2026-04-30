@@ -10,40 +10,56 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import mvc.View;
 
+
 public class MenuView extends BorderPane implements View {
-    private final VBox affichagePrincipal;
-    private final HBox buttonContainerCenter;
-    private final HBox buttonContainerBottom;
+
+    private HBox buttonContainerCenter;
+    private HBox buttonContainerBottom;
+    private VBox titleContainer;
     private MediaPlayer mediaPlayer;
 
     public MenuView() {
-        // 2. Mise en place du conteneur pour les boutons (par-dessus la vidéo)
-        affichagePrincipal = new VBox(100);
-        affichagePrincipal.setAlignment(Pos.CENTER);
+        this.setStyle("-fx-background-color: black;");
 
-        buttonContainerBottom = new HBox(15);
-        buttonContainerBottom.setAlignment(Pos.BOTTOM_RIGHT);
+        // Initialisation des conteneurs
+        buttonContainerCenter = new HBox(30);
+        buttonContainerCenter.setAlignment(Pos.CENTER);
 
-        buttonContainerCenter = new HBox(100);
-        buttonContainerCenter.setAlignment(Pos.BOTTOM_CENTER);
+        buttonContainerBottom = new HBox(10);
+        buttonContainerBottom.setAlignment(Pos.CENTER);
+        buttonContainerBottom.setStyle("-fx-padding: 30;");
 
-        // On ajoute la VBox au StackPane (elle sera donc au-dessus de la MediaView)
+        titleContainer = new VBox(50);
+        titleContainer.setAlignment(Pos.CENTER);
+
+        // Positionnement initial
+        this.setCenter(titleContainer);
         this.setBottom(buttonContainerBottom);
-        this.setCenter(affichagePrincipal);
     }
 
-    // Le Contrôleur utilisera cette méthode pour ajouter les boutons
-    // On les ajoute dans le buttonContainer, PAS directement dans le StackPane
-    public void addComponentBottom(Node component) {
-        buttonContainerBottom.getChildren().add(component);
+    public HBox getButtonContainerCenter() {
+        return buttonContainerCenter;
     }
 
-    public void addComponentCenter(Node component) {
-        affichagePrincipal.getChildren().add(component);
+    /**
+     * Ajoute un composant dans la HBox centrale.
+     */
+    public void addComponentHBox(Node node) {
+        buttonContainerCenter.getChildren().add(node);
     }
 
-    public void addComponentHBox(Node component) {
-        buttonContainerCenter.getChildren().add(component);
+    /**
+     * Ajoute un composant dans la VBox centrale (Titre + Boutons).
+     */
+    public void addComponentCenter(Node node) {
+        titleContainer.getChildren().add(node);
+    }
+
+    /**
+     * Ajoute un composant dans la HBox du bas (ex: Bouton Quitter).
+     */
+    public void addComponentBottom(Node node) {
+        buttonContainerBottom.getChildren().add(node);
     }
 
     public void setupVideoBackground(String videoPath) {
@@ -58,7 +74,7 @@ public class MenuView extends BorderPane implements View {
 
             // 2. Paramétrer
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-            mediaPlayer.setVolume(0.5);
+            mediaPlayer.setVolume(0.1); // Réduction du volume de 0.5 à 0.1
             mediaPlayer.play();
 
             // 3. Ajuster la taille
@@ -77,12 +93,8 @@ public class MenuView extends BorderPane implements View {
 
     public void stopVideo() {
         if (mediaPlayer != null) {
-        mediaPlayer.pause();
-    }
-    }
-
-    public HBox getButtonContainerCenter() {
-        return buttonContainerCenter;
+            mediaPlayer.stop(); // Utiliser stop() au lieu de pause() et libérer les ressources si nécessaire
+            mediaPlayer.dispose();
+        }
     }
 }
-

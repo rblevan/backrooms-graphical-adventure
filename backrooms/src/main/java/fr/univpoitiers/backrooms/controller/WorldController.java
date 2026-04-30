@@ -28,6 +28,9 @@ public class WorldController extends Controller {
         WorldView view = (WorldView) getView();
 
         Hero player = createHero();
+        if (player == null) {
+            throw new IllegalArgumentException("User cancelled character creation");
+        }
         model.setPlayer(player);
 
         model.setMapPath("/images/levels/level1.png");
@@ -39,6 +42,9 @@ public class WorldController extends Controller {
     private Hero createHero() {
         // 1. Demander le nom au joueur (Logique d'entrée)
         String playerName = Hero.askPlayerName();
+        if (playerName == null) {
+            return null;
+        }
 
         // 2. Configuration du sac à dos (Modèle)
         Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);
@@ -77,62 +83,3 @@ public class WorldController extends Controller {
         );
     }
 }
-   /* public static WorldController create(){
-        WorldController worldController = new WorldController();
-        worldController.init();
-        return worldController;
-    }
-
-    public WorldController() {
-        super(new WorldModel(), new WorldView());
-    }
-
-    public void init() {
-        // 1. Initialisation du monde
-        WorldBuilder worldBuilder = new WorldBuilder();
-
-        //a revoir
-        String startLevelPath = worldBuilder.getLocations().keySet().stream()
-                .filter(path -> path.contains("/images/levels/level1.png"))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("No start map found"));
-        Locations startLocation = worldBuilder.getLocation(startLevelPath);
-
-        // 2. Création du joueur via Dialog
-        String playerName = askPlayerName();
-        Backpack backpack = new Backpack("Blue backpack", "A standard backpack", 120);
-        String playerDesc = "an ordinary person who has lived a quiet, unremarkable life...";
-
-        //l'image du hero
-        String pathImage = Objects.requireNonNull(getClass().getResource("/images/downHero.png")).toExternalForm();
-        Image imageHero = new Image(pathImage);
-        this.player = new Hero(playerName, 100, playerName, 20, playerDesc, backpack, startLocation, imageHero, new Position(100,100));
-    }
-
-    public void startWorldMode() {
-        prepareWorld();
-        new BackroomsAnimation(primaryStage, () -> {
-            // Ce code s'exécute UNIQUEMENT quand l'animation est terminée
-            Commands commandProcessor = new Commands(player, player.getLocation());
-            WorldView worldWindow = new WorldView(primaryStage, this, commandProcessor);
-        });
-    }
-
-    private String askPlayerName() {
-        TextInputDialog dialog = new TextInputDialog("Anonymous");
-        dialog.setTitle("Backrooms - Character Creation");
-        dialog.setHeaderText("Welcome to the Backrooms");
-        dialog.setContentText("Enter your name:");
-
-        Optional<String> result = dialog.showAndWait();
-
-        if(result.orElse("Anonymous").trim().isEmpty()){
-            return "Anonymous";
-        }
-        return result.get();
-    }
-
-    public Hero getPlayer() {
-        return this.player;
-    }
-}*/

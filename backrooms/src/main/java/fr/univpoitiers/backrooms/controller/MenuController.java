@@ -93,10 +93,15 @@ public class MenuController extends Controller {
 
         Stage stage = (Stage) currentView.getScene().getWindow();
 
-        TextController textController = TextController.create();
-        this.subControllers.add(textController);
-        textController.startTextMode();
-        stage.getScene().setRoot((Parent) textController.getView());
+        try {
+            TextController textController = TextController.create();
+            this.subControllers.add(textController);
+            textController.startTextMode();
+            ((MenuView) this.getView()).stopVideo();
+            stage.getScene().setRoot((Parent) textController.getView());
+        } catch (IllegalArgumentException e) {
+            // Cancellation during creation
+        }
     }
 
     public void switchToGameWorld() {
@@ -104,10 +109,15 @@ public class MenuController extends Controller {
 
         Stage stage = (Stage) currentView.getScene().getWindow();
 
-        WorldController worldController = WorldController.create();
-        this.subControllers.add(worldController);
-        worldController.startWorldGame();
-        stage.getScene().setRoot((Parent) worldController.getView());
+        try {
+            WorldController worldController = WorldController.create();
+            this.subControllers.add(worldController);
+            worldController.startWorldGame();
+            ((MenuView) this.getView()).stopVideo();
+            stage.getScene().setRoot((Parent) worldController.getView());
+        } catch (IllegalArgumentException e) {
+            // Cancellation during creation
+        }
     }
 
     public void switchToLevelEditor() {
